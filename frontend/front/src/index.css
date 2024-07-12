@@ -1,0 +1,14 @@
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+background: #f1f5f9;
+
+}
+
+.container2{
+  margin-left: 0px;
+  margin-right: 0px;  
+}

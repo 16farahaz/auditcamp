@@ -1,0 +1,44 @@
+/* SecuritypStyle.css */
+.t1 {
+    text-align: center; /* Center align text */
+    margin-bottom: 20px; /* Add space between heading and box1 */
+  }
+.box1 {
+    display: flex;
+    align-items: center;
+    background-color:white; /* Light background color */
+    padding: 20px;
+    border-radius: 8px;
+    margin-left: 300px;
+    margin-right: 300px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Soft shadow */
+  }
+  
+  .box1 input[type="checkbox"] {
+    width: 30px; /* Increase checkbox size */
+    height: 35px;
+    margin-left: 40px;
+    margin-right: 10px;
+  }
+  
+  
+.box1 label {
+    font-size: 18px;
+    margin-bottom: 10px;
+    display: block;
+    word-wrap: break-word; /* Wrap long words */
+    width: 50%; /* Full width for label */
+  }
+  
+  .box1 textarea {
+
+    height: 150px; /* Decrease textarea height */
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: none;
+    margin-left: 10px; /* Add margin between checkbox and textarea */
+  }
+
+  
