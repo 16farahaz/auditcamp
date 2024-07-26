@@ -25,35 +25,21 @@ const Oper_security = () => {
       }
     });
   }, [
-    auditData.prText,
-    auditData.mgText,
-    auditData.foText,
-    auditData.tsText,
-
-    auditData.mlText,
-
-    auditData.prrText,
-    auditData.uppText,
-
-
-
-    auditData.evText,
-    auditData.ogText,
-    auditData.adText,
-    auditData.ckText,
-
-    auditData.inText,
-
-    auditData.vuText,
-    auditData.trText,
-
-
-    auditData.onText,
-
-
-
-
-  
+    auditData.at116,
+    auditData.at118,
+    auditData.at120,
+    auditData.at122,
+    auditData.at124,
+    auditData.at126,
+    auditData.at128,
+    auditData.at130,
+    auditData.at132,
+    auditData.at134,
+    auditData.at136,
+    auditData.at138,
+    auditData.at140,
+    auditData.at142,
+    auditData.at144,
   ]);
 
   return (
@@ -64,20 +50,19 @@ const Oper_security = () => {
       </div>
 
       <div className='box1'>
-        <label htmlFor="pp"> Defined policy for documented
-                              operating procedures ? </label>
+        <label htmlFor="pp">Defined policy for documented operating procedures?</label>
         <input
           type="checkbox"
-          name="pr"
-          id="pr"
-          checked={auditData.pr || false}
+          name="at115"
+          id="at115"
+          checked={auditData.at115 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="prText"
-          value={auditData.prText || ''}
+          name="at116"
+          value={auditData.at116 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
@@ -86,65 +71,61 @@ const Oper_security = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="acc">Defined policy for change
-                             management ? </label>
+        <label htmlFor="acc">Defined policy for change management?</label>
         <input
           type="checkbox"
-          name="mg"
-          id="mg"
-          checked={auditData.mg || false}
+          name="at117"
+          id="at117"
+          checked={auditData.at117 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt2"
-          name="mgText"
-          value={auditData.mgText || ''}
+          name="at118"
+          value={auditData.at118 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[1] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
       <div className='box1'>
-        <label htmlFor="off">Defined policy for capacity
-        management ?</label>
+        <label htmlFor="off">Defined policy for capacity management?</label>
         <input
           type="checkbox"
-          name="fo"
-          id="fo"
-          checked={auditData.fo || false}
+          name="at119"
+          id="at119"
+          checked={auditData.at119 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt3"
-          name="foText"
-          value={auditData.foText || ''}
+          name="at120"
+          value={auditData.at120 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[2] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
       <div className='box1'>
-        <label htmlFor="def">Defined policy for separation of
-                             development, testing and
-                             operational environments ?</label>
+        <label htmlFor="def">Defined policy for separation of development, testing and operational environments?</label>
         <input
           type="checkbox"
-          name="ts"
-          id="ts"
-          checked={auditData.ts || false}
+          name="at121"
+          id="at121"
+          checked={auditData.at121 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="tsText"
-          value={auditData.tsText || ''}
+          name="at122"
+          value={auditData.at122 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[3] = el}
@@ -153,66 +134,50 @@ const Oper_security = () => {
       </div>
       <br />
 
-
-
-
-
-
-
-
       <div className='t1'>
         <h1>Protection from malware</h1>
       </div>
 
       <div className='box1'>
-        <label htmlFor="ml"> Defined policy for controls against
-                             malware ?  </label>
+        <label htmlFor="ml">Defined policy for controls against malware?</label>
         <input
           type="checkbox"
-          name="ml"
-          id="ml"
-          checked={auditData.ml || false}
+          name="at123"
+          id="at123"
+          checked={auditData.at123 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="mlText"
-          value={auditData.mlText || ''}
+          name="at124"
+          value={auditData.at124 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[4] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-
-
-
-
-       <br/>
+      <br />
 
       <div className='t1'>
-        
         <h3>System Backup</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="prr"> Defined policy for backing up
-                             systems ? </label>
+        <label htmlFor="prr">Defined policy for backing up systems?</label>
         <input
           type="checkbox"
-          name="prr"
-          id="prr"
-          checked={auditData.prr || false}
+          name="at125"
+          id="at125"
+          checked={auditData.at125 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="prrText"
-          value={auditData.prrText || ''}
+          name="at126"
+          value={auditData.at126 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[5] = el}
@@ -221,54 +186,45 @@ const Oper_security = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="upp">Defined policy for information
-                             backup? </label>
+        <label htmlFor="upp">Defined policy for information backup?</label>
         <input
           type="checkbox"
-          name="upp"
-          id="upp"
-          checked={auditData.upp || false}
+          name="at127"
+          id="at127"
+          checked={auditData.at127 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt2"
-          name="uppText"
-          value={auditData.uppText || ''}
+          name="at128"
+          value={auditData.at128 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[6] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-      
-
-
-
-
-
-
-
       <br />
+
       <div className='t1'>
-     
         <h3>Logging and Monitoring</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="pp"> Defined policy for event logging ? </label>
+        <label htmlFor="pp">Defined policy for event logging?</label>
         <input
           type="checkbox"
-          name="ev"
-          id="ev"
-          checked={auditData.ev || false}
+          name="at129"
+          id="at129"
+          checked={auditData.at129 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="evText"
-          value={auditData.evText || ''}
+          name="at130"
+          value={auditData.at130 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[7] = el}
@@ -277,42 +233,40 @@ const Oper_security = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="acc">Defined policy for protection of
-                             log information ? </label>
+        <label htmlFor="acc">Defined policy for protection of log information?</label>
         <input
           type="checkbox"
-          name="og"
-          id="og"
-          checked={auditData.og || false}
+          name="at131"
+          id="at131"
+          checked={auditData.at131 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt2"
-          name="ogText"
-          value={auditData.ogText || ''}
+          name="at132"
+          value={auditData.at132 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[8] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
       <div className='box1'>
-        <label htmlFor="ad">Defined policy for administrator
-                            and operator log ? </label>
+        <label htmlFor="ad">Defined policy for administrator and operator log?</label>
         <input
           type="checkbox"
-          name="ad"
-          id="ad"
-          checked={auditData.ad || false}
+          name="at133"
+          id="at133"
+          checked={auditData.at133 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt3"
-          name="adText"
-          value={auditData.adText || ''}
+          name="at134"
+          value={auditData.at134 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[9] = el}
@@ -321,92 +275,71 @@ const Oper_security = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="ck">Defined policy for clock
-                             synchronization ?</label>
+        <label htmlFor="ck">Defined policy for clock synchronization?</label>
         <input
           type="checkbox"
-          name="ck"
-          id="ck"
-          checked={auditData.ck || false}
+          name="at135"
+          id="at135"
+          checked={auditData.at135 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="ckText"
-          value={auditData.ckText || ''}
+          name="at136"
+          value={auditData.at136 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[10] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-        <br />
-
-
-
-
-
-
-
-
-
+      <br />
 
       <div className='t1'>
-     <h3>Control of operational software</h3>
+        <h3>Control of operational software</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="in">Defined policy for installation of
-        software on operational systems ?</label>
+        <label htmlFor="ml">Defined policy for installation of software on operational systems?</label>
         <input
           type="checkbox"
-          name="in"
-          id="in"
-          checked={auditData.in || false}
+          name="at137"
+          id="at137"
+          checked={auditData.at137 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt4"
-          name="inText"
-          value={auditData.inText || ''}
+          id="txt1"
+          name="at138"
+          value={auditData.at138 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[11] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
       <br />
 
-
-
-
-
-
       <div className='t1'>
-     <h3>Technical vulnerability management</h3>
+        <h3>Technical vulnerability management</h3>
       </div>
 
-   
-
-
       <div className='box1'>
-        <label htmlFor="vu">Defined policy for management of
-                            technical vulnerabilities ?</label>
+        <label htmlFor="prr">Defined policy for technical vulnerability management?</label>
         <input
           type="checkbox"
-          name="vu"
-          id="vu"
-          checked={auditData.vu || false}
+          name="at139"
+          id="at139"
+          checked={auditData.at139 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt4"
-          name="vuText"
-          value={auditData.vuText || ''}
+          id="txt1"
+          name="at140"
+          value={auditData.at140 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[12] = el}
@@ -414,78 +347,54 @@ const Oper_security = () => {
         ></textarea>
       </div>
       <br />
+
+      <div className='t1'>
+        <h3>Information systems audit considerations</h3>
+      </div>
+
       <div className='box1'>
-        <label htmlFor="tr">Defined policy for restriction on
-                            software installation ? </label>
+        <label htmlFor="upp">Defined policy for information systems audit?</label>
         <input
           type="checkbox"
-          name="tr"
-          id="tr"
-          checked={auditData.tr || false}
+          name="at141"
+          id="at141"
+          checked={auditData.at141 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt4"
-          name="trText"
-          value={auditData.trText || ''}
+          id="txt2"
+          name="at142"
+          value={auditData.at142 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[13] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-      
       <br />
-      <div className='t1'>
-      <h3>Information systems audit considerations</h3>
-      </div>
-
-   
-
-
       <div className='box1'>
-        <label htmlFor="on">Defined policy for information
-                            system audit control ?</label>
+        <label htmlFor="ev">Defined policy for protecting audit tools?</label>
         <input
           type="checkbox"
-          name="on"
-          id="on"
-          checked={auditData.on || false}
+          name="at143"
+          id="at143"
+          checked={auditData.at143 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt4"
-          name="onText"
-          value={auditData.onText || ''}
+          id="txt3"
+          name="at144"
+          value={auditData.at144 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[14] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-      <br />
-    
-
-
-
     </div>
   );
 };
 
 export default Oper_security;
-
-
-
-
-
-
-
-
-
-
-
-

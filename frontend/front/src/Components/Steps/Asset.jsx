@@ -5,7 +5,7 @@ import "../Steps/SecuritypStyle.css"; // Import your CSS file for styling
 const Asset = () => {
   const { auditData, setAuditData } = useContext(StepperContext);
   const textAreaRefs = useRef([]);
-  
+
   // Function to handle checkbox change
   const handleCheckboxChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.checked });
@@ -25,16 +25,16 @@ const Asset = () => {
       }
     });
   }, [
-    auditData.listText,
-    auditData.ownershipText,
-    auditData.useText,
-    auditData.defText,
-    auditData.infooText,
-    auditData.labText,
-    auditData.forhText,
-    auditData.mediaText,
-    auditData.dispoText,
-    auditData.phyText,
+    auditData.at34,
+    auditData.at36,
+    auditData.at38,
+    auditData.at40,
+    auditData.at42,
+    auditData.at44,
+    auditData.at46,
+    auditData.at48,
+    auditData.at50,
+    auditData.at52,
   ]);
 
   return (
@@ -45,19 +45,19 @@ const Asset = () => {
       </div>
 
       <div className='box1'>
-        <label htmlFor="list">Complete inventory list of assets?</label>
+        <label htmlFor="at33">Complete inventory list of assets?</label>
         <input
           type="checkbox"
-          name="list"
-          id="list"
-          checked={auditData.list || false}
+          name="at33"
+          id="at33"
+          checked={auditData.at33 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt1"
-          name="listText"
-          value={auditData.listText || ''}
+          id="at34"
+          name="at34"
+          value={auditData.at34 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
@@ -67,61 +67,63 @@ const Asset = () => {
       <br />
 
       <div className='box1'>
-        <label htmlFor="ownership">Complete ownership list of assets?</label>
+        <label htmlFor="at35">Complete ownership list of assets?</label>
         <input
           type="checkbox"
-          name="ownership"
-          id="ownership"
-          checked={auditData.ownership || false}
+          name="at35"
+          id="at35"
+          checked={auditData.at35 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt2"
-          name="ownershipText"
-          value={auditData.ownershipText || ''}
+          id="at36"
+          name="at36"
+          value={auditData.at36 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[1] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='box1'>
-        <label htmlFor="use">Defined "acceptable use" of assets policy?</label>
+        <label htmlFor="at37">Defined "acceptable use" of assets policy?</label>
         <input
           type="checkbox"
-          name="use"
-          id="use"
-          checked={auditData.use || false}
+          name="at37"
+          id="at37"
+          checked={auditData.at37 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt3"
-          name="useText"
-          value={auditData.useText || ''}
+          id="at38"
+          name="at38"
+          value={auditData.at38 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[2] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='box1'>
-        <label htmlFor="def">Defined return of assets policy?</label>
+        <label htmlFor="at39">Defined return of assets policy?</label>
         <input
           type="checkbox"
-          name="def"
-          id="def"
-          checked={auditData.def || false}
+          name="at39"
+          id="at39"
+          checked={auditData.at39 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt4"
-          name="defText"
-          value={auditData.defText || ''}
+          id="at40"
+          name="at40"
+          value={auditData.at40 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[3] = el}
@@ -129,133 +131,139 @@ const Asset = () => {
         ></textarea>
       </div>
       <br />
+
       <div className='t1'>
         <h3>Information Classification</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="infoo">Defined policy for classification of information?</label>
+        <label htmlFor="at41">Defined policy for classification of information?</label>
         <input
           type="checkbox"
-          name="infoo"
-          id="infoo"
-          checked={auditData.infoo || false}
+          name="at41"
+          id="at41"
+          checked={auditData.at41 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt5"
-          name="infooText"
-          value={auditData.infooText || ''}
+          id="at42"
+          name="at42"
+          value={auditData.at42 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[4] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='box1'>
-        <label htmlFor="lab">Defined policy for labeling information?</label>
+        <label htmlFor="at43">Defined policy for labeling information?</label>
         <input
           type="checkbox"
-          name="lab"
-          id="lab"
-          checked={auditData.lab || false}
+          name="at43"
+          id="at43"
+          checked={auditData.at43 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt6"
-          name="labText"
-          value={auditData.labText || ''}
+          id="at44"
+          name="at44"
+          value={auditData.at44 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[5] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='box1'>
-        <label htmlFor="forh">Defined policy for handling of assets?</label>
+        <label htmlFor="at45">Defined policy for handling of assets?</label>
         <input
           type="checkbox"
-          name="forh"
-          id="forh"
-          checked={auditData.forh || false}
+          name="at45"
+          id="at45"
+          checked={auditData.at45 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt7"
-          name="forhText"
-          value={auditData.forhText || ''}
+          id="at46"
+          name="at46"
+          value={auditData.at46 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[6] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='t1'>
         <h3>Media Handling</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="media">Defined policy for management of removable media?</label>
+        <label htmlFor="at47">Defined policy for management of removable media?</label>
         <input
           type="checkbox"
-          name="media"
-          id="media"
-          checked={auditData.media || false}
+          name="at47"
+          id="at47"
+          checked={auditData.at47 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt8"
-          name="mediaText"
-          value={auditData.mediaText || ''}
+          id="at48"
+          name="at48"
+          value={auditData.at48 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[7] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='box1'>
-        <label htmlFor="dispo">Defined policy for disposal of media?</label>
+        <label htmlFor="at49">Defined policy for disposal of media?</label>
         <input
           type="checkbox"
-          name="dispo"
-          id="dispo"
-          checked={auditData.dispo || false}
+          name="at49"
+          id="at49"
+          checked={auditData.at49 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt9"
-          name="dispoText"
-          value={auditData.dispoText || ''}
+          id="at50"
+          name="at50"
+          value={auditData.at50 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[8] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+
       <div className='box1'>
-        <label htmlFor="phy">Defined policy for physical media transfer?</label>
+        <label htmlFor="at51">Defined policy for physical media transfer?</label>
         <input
           type="checkbox"
-          name="phy"
-          id="phy"
-          checked={auditData.phy || false}
+          name="at51"
+          id="at51"
+          checked={auditData.at51 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt10"
-          name="phyText"
-          value={auditData.phyText || ''}
+          id="at52"
+          name="at52"
+          value={auditData.at52 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[9] = el}

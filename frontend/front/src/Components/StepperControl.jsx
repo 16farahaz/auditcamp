@@ -1,4 +1,21 @@
-export default function StepperControl({ handleClick, currentStep, steps }) {
+import React, { useState } from 'react'; // Add useState here
+import { useNavigate } from 'react-router-dom';
+
+
+export default function StepperControl({ handleClick, currentStep, steps,handleConfirm }) {
+  const navigate = useNavigate();
+  const [confirmationSuccess, setConfirmationSuccess] = useState(false);
+
+  const handleConfirmClick = async () => {
+    const isSuccessful = await handleConfirm(); // Call handleConfirm and get the success status
+    if (isSuccessful) {
+      setConfirmationSuccess(true);
+      navigate('/cong'); // Navigate to the Cong component if successful
+    } else {
+      setConfirmationSuccess(false);
+      alert('Data submission failed. Please try again.');
+    }
+  };
   return (
     <div className="container mt-4 mb-8  flex justify-around">
       <button
@@ -10,12 +27,22 @@ export default function StepperControl({ handleClick, currentStep, steps }) {
         Back
       </button>
 
-      <button
-        onClick={() => handleClick("next")}
-        className="cursor-pointer rounded-lg bg-green-500 py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white"
-      >
-        {currentStep === steps.length - 1 ? "Confirm" : "Next"}
-      </button>
+      {currentStep === steps.length-1 ? (
+        <button
+        
+          onClick={handleConfirmClick} 
+          className="cursor-pointer rounded-lg bg-teal-600 py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white"
+        >
+          Confirm
+        </button>
+      ) : (
+        <button
+          onClick={() => handleClick("next")}
+          className="cursor-pointer rounded-lg bg-teal-600 py-2 px-4 font-semibold uppercase text-white transition duration-200 ease-in-out hover:bg-slate-700 hover:text-white"
+        >
+          Next
+        </button>
+      )}
     </div>
   );
 }

@@ -2,71 +2,66 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { StepperContext } from '../contexts/ContextStepper';
 import "../Steps/SecuritypStyle.css"; // Import your CSS file for styling
 
-const Asset = () => {
+const Accesscontrol = () => {
   const { auditData, setAuditData } = useContext(StepperContext);
   const textAreaRefs = useRef([]);
   
-  // Function to handle checkbox change
+  // Fonction pour gérer les changements de cases à cocher
   const handleCheckboxChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.checked });
   };
 
-  // Function to handle textarea change
+  // Fonction pour gérer les changements dans les zones de texte
   const handleTextAreaChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.value });
   };
 
-  // Auto resize textareas based on content
+  // Redimensionner automatiquement les zones de texte en fonction du contenu
   useEffect(() => {
     textAreaRefs.current.forEach((ref, index) => {
       if (ref) {
-        ref.style.height = 'auto'; // Reset height before calculating
+        ref.style.height = 'auto'; // Réinitialiser la hauteur avant le calcul
         ref.style.height = ref.scrollHeight + 'px';
       }
     });
   }, [
-    auditData.polText,
-    auditData.accText,
-    auditData.regText,
-    auditData.deffText,
-    auditData.infoooText,
-    auditData.defffText,
-    auditData.autText,
-    auditData.remText,
-
-
-    auditData.usText,
-
-    
-    auditData.resText,
-    auditData.logText,
-    auditData.passText,
-    auditData.pgText,
-    auditData.ctText,
+    auditData.at54,
+    auditData.at56,
+    auditData.at58,
+    auditData.at60,
+    auditData.at62,
+    auditData.at64,
+    auditData.at66,
+    auditData.at68,
+    auditData.at70,
+    auditData.at72,
+    auditData.at74,
+    auditData.at76,
+    auditData.at78,
+    auditData.at80,
   ]);
 
   return (
     <div className="bloc1">
       <div className='t1'>
-        <h1>Access control</h1>
-        <h3>Responsibilities for assets</h3>
+        <h1>Access Control</h1>
+        <h3>Responsibilities for Assets</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="list">Defined policy for access
-                              control policy ?</label>
+        <label htmlFor="at53">Defined policy for access control policy?</label>
         <input
           type="checkbox"
-          name="pol"
-          id="pol"
-          checked={auditData.pol || false}
+          name="at53"
+          id="at53"
+          checked={auditData.at53 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="polText"
-          value={auditData.polText || ''}
+          name="at54"
+          value={auditData.at54 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
@@ -75,64 +70,64 @@ const Asset = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="acc">Defined policy for access to
-                             networks and network services?</label>
+        <label htmlFor="at55">Defined policy for access to networks and network services?</label>
         <input
           type="checkbox"
-          name="acc"
-          id="acc"
-          checked={auditData.acc || false}
+          name="at55"
+          id="at55"
+          checked={auditData.at55 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt2"
-          name="accText"
-          value={auditData.accText || ''}
+          name="at56"
+          value={auditData.at56 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[1] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
+      <div className='t1'>
+        <h3>Responsibilities for Assets</h3>
+      </div>
       <div className='box1'>
-        <label htmlFor="infooo">Defined policy for user asset
-        registration and de-registration ?</label>
+        <label htmlFor="at57">Defined policy for user asset registration and de-registration?</label>
         <input
           type="checkbox"
-          name="infooo"
-          id="infooo"
-          checked={auditData.reg || false}
+          name="at57"
+          id="at57"
+          checked={auditData.at57 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt3"
-          name="infoooText"
-          value={auditData.infoooText || ''}
+          name="at58"
+          value={auditData.at58 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[2] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
       <div className='box1'>
-        <label htmlFor="def">Defined policy for user access
-                             provisioning ? </label>
+        <label htmlFor="at59">Defined policy for user access provisioning?</label>
         <input
           type="checkbox"
-          name="defff"
-          id="defff"
-          checked={auditData.defff || false}
+          name="at59"
+          id="at59"
+          checked={auditData.at59 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="defffText"
-          value={auditData.defffText || ''}
+          name="at60"
+          value={auditData.at60 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[3] = el}
@@ -140,185 +135,132 @@ const Asset = () => {
         ></textarea>
       </div>
       <br />
-
-
-
-      <div className='t1'>
-        <h3>Information Classification</h3>
-      </div>
-
       <div className='box1'>
-        <label htmlFor="infoo">Defined policy for management
-                               of privileged access rights ? </label>
+        <label htmlFor="at61">Defined policy for management of privileged access rights?</label>
         <input
           type="checkbox"
-          name="infoo"
-          id="infoo"
-          checked={auditData.infoo || false}
+          name="at61"
+          id="at61"
+          checked={auditData.at61 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt5"
-          name="infooText"
-          value={auditData.infooText || ''}
+          name="at62"
+          value={auditData.at62 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[4] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-      
       <br />
       <div className='box1'>
-        <label htmlFor="lab">Defined policy for management
-                             of secret authentication
-                             information of users ?</label>
+        <label htmlFor="at63">Defined policy for management of secret authentication information of users?</label>
         <input
           type="checkbox"
-          name="aut"
-          id="aut"
-          checked={auditData.aut || false}
+          name="at63"
+          id="at63"
+          checked={auditData.at63 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt6"
-          name="autText"
-          value={auditData.autText || ''}
+          name="at64"
+          value={auditData.at64 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[5] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
+      <br />
       <div className='box1'>
-        <label htmlFor="forh"> Defined policy for removal or
-        adjustment of access rights ?</label>
+        <label htmlFor="at65">Defined policy for removal or adjustment of access rights?</label>
         <input
           type="checkbox"
-          name="rem"
-          id="rem"
-          checked={auditData.rem || false}
+          name="at65"
+          id="at65"
+          checked={auditData.at65 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt7"
-          name="remText"
-          value={auditData.remText || ''}
+          name="at66"
+          value={auditData.at66 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[6] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <br />
-      <div className='t1'>
-        <h3>User Responsbilities</h3>
-      </div>
-
       <div className='box1'>
-        <label htmlFor="media">Defined policy for use of secret
-        authentication information ?  </label>
+        <label htmlFor="at67">Defined policy for review of user access rights?</label>
         <input
           type="checkbox"
-          name="us"
-          id="us"
-          checked={auditData.us || false}
+          name="at67"
+          id="at67"
+          checked={auditData.at67 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt8"
-          name="usText"
-          value={auditData.usText || ''}
+          name="at68"
+          value={auditData.at68 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[7] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <br />
       <div className='t1'>
-        <h3>System and application access control</h3>
+        <h3>User Responsibilities</h3>
       </div>
-<br />
       <div className='box1'>
-        <label htmlFor="res">Defined policy for information
-                               access restrictions ? 
-        </label>
+        <label htmlFor="at69">Defined policy for use of secret authentication information?</label>
         <input
           type="checkbox"
-          name="res"
-          id="res"
-          checked={auditData.res || false}
+          name="at69"
+          id="at69"
+          checked={auditData.at69 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt9"
-          name="resText"
-          value={auditData.resText || ''}
+          name="at70"
+          value={auditData.at70 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[8] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-<br />
-
-<div className='box1'>
-        <label htmlFor="log">Defined policy for secure log-in
-        procedures ?</label>
+      <br />
+      <div className='t1'>
+        <h3>System and Application Access Control</h3>
+      </div>
+      <br />
+      <div className='box1'>
+        <label htmlFor="at71">Defined policy for information access restrictions?</label>
         <input
           type="checkbox"
-          name="log"
-          id="log"
-          checked={auditData.log || false}
+          name="at71"
+          id="at71"
+          checked={auditData.at71 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt10"
-          name="logText"
-          value={auditData.logText || ''}
+          name="at72"
+          value={auditData.at72 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[9] = el}
@@ -327,20 +269,19 @@ const Asset = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="pass">Defined policy for password
-        management systems ?</label>
+        <label htmlFor="at73">Defined policy for secure log-in procedures?</label>
         <input
           type="checkbox"
-          name="pass"
-          id="pass"
-          checked={auditData.pass || false}
+          name="at73"
+          id="at73"
+          checked={auditData.at73 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt10"
-          name="passText"
-          value={auditData.passText || ''}
+          id="txt11"
+          name="at74"
+          value={auditData.at74 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[10] = el}
@@ -349,20 +290,19 @@ const Asset = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="pg">Defined policy for use of
-        privileged utility programs ?</label>
+        <label htmlFor="at75">Defined policy for password management systems?</label>
         <input
           type="checkbox"
-          name="pg"
-          id="pg"
-          checked={auditData.pg || false}
+          name="at75"
+          id="at75"
+          checked={auditData.at75 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt11"
-          name="pgText"
-          value={auditData.pgText || ''}
+          id="txt12"
+          name="at76"
+          value={auditData.at76 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[11] = el}
@@ -371,30 +311,48 @@ const Asset = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="ct">Defined policy for access control
-        to program source code ?</label>
+        <label htmlFor="at77">Defined policy for use of privileged utility programs?</label>
         <input
           type="checkbox"
-          name="ct"
-          id="ct"
-          checked={auditData.phy || false}
+          name="at77"
+          id="at77"
+          checked={auditData.at77 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt12"
-          name="ctText"
-          value={auditData.ctText || ''}
+          id="txt13"
+          name="at78"
+          value={auditData.at78 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[12] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
+      <br />
+      <div className='box1'>
+        <label htmlFor="at79">Defined policy for access control to program source code?</label>
+        <input
+          type="checkbox"
+          name="at79"
+          id="at79"
+          checked={auditData.at79 || false}
+          onChange={handleCheckboxChange}
+        />
+        <textarea
+          className="txt1"
+          id="txt14"
+          name="at80"
+          value={auditData.at80 || ''}
+          onChange={handleTextAreaChange}
+          rows="1"
+          ref={el => textAreaRefs.current[13] = el}
+          placeholder='Any recommendations'
+        ></textarea>
+      </div>
     </div>
   );
 };
 
-export default Asset;
-
+export default Accesscontrol;

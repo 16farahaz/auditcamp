@@ -1,12 +1,11 @@
 import React, { useContext, useEffect, useRef } from 'react';
 import { StepperContext } from '../contexts/ContextStepper';
 import "../Steps/SecuritypStyle.css"; // Import your CSS file for styling
-import Securityi from './Securityi';
 
 const Securityc = () => {
   const { auditData, setAuditData } = useContext(StepperContext);
   const textAreaRefs = useRef([]);
-  
+
   // Function to handle checkbox change
   const handleCheckboxChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.checked });
@@ -19,53 +18,44 @@ const Securityc = () => {
 
   // Auto resize textareas based on content
   useEffect(() => {
-    textAreaRefs.current.forEach((ref, index) => {
+    textAreaRefs.current.forEach((ref) => {
       if (ref) {
         ref.style.height = 'auto'; // Reset height before calculating
         ref.style.height = ref.scrollHeight + 'px';
       }
     });
   }, [
-    auditData.netText,
-    auditData.esText,
-    auditData.egText,
-
-
-
-    auditData.ceText,
-    auditData.eeText,
-    auditData.icText,
-    auditData.meText,
-    auditData.loText,
-    
-
-  
+    auditData.at146,
+    auditData.at148,
+    auditData.at150,
+    auditData.at152,
+    auditData.at154,
+    auditData.at156,
+    auditData.at158,
+    auditData.at160,
   ]);
 
   return (
     <div className="bloc1">
+      <div className='t1'>
+        <h1>Communications security</h1>
+        <h3>Network security management</h3>
+      </div>
 
-     <div className='t1'>
-     <h1>Communications security</h1>
-      <h3>Network security management</h3>
-     </div>
-
-     
       <div className='box1'>
-        <label htmlFor="ls">Defined policy for network
-        controls ?</label>
+        <label htmlFor="at145">Defined policy for network controls?</label>
         <input
           type="checkbox"
-          name="net"
-          id="net"
-          checked={auditData.net || false}
+          name="at145"
+          id="at145"
+          checked={auditData.at145 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="netText"
-          value={auditData.netText || ''}
+          name="at146"
+          value={auditData.at146 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
@@ -74,20 +64,19 @@ const Securityc = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="cy">Defined policy for security of
-        network services ?</label>
+        <label htmlFor="at147">Defined policy for security of network services?</label>
         <input
           type="checkbox"
-          name="es"
-          id="es"
-          checked={auditData.es || false}
+          name="at147"
+          id="at147"
+          checked={auditData.at147 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="esText"
-          value={auditData.esText || ''}
+          name="at148"
+          value={auditData.at148 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[1] = el}
@@ -96,63 +85,43 @@ const Securityc = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="eg">Defined policy for segregation in
-                            networks ?</label>
+        <label htmlFor="at149">Defined policy for segregation in networks?</label>
         <input
           type="checkbox"
-          name="eg"
-          id="eg"
-          checked={auditData.eg || false}
+          name="at149"
+          id="at149"
+          checked={auditData.at149 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="egText"
-          value={auditData.egText || ''}
+          name="at150"
+          value={auditData.at150 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[2] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
       <br />
       <div className='t1'>
-      <h3>Information transfer</h3>
+        <h3>Information transfer</h3>
       </div>
       <div className='box1'>
-        <label htmlFor="ce">Defined policy for information
-        transfer policies and procedures ?</label>
+        <label htmlFor="at151">Defined policy for information transfer policies and procedures?</label>
         <input
           type="checkbox"
-          name="ce"
-          id="ce"
-          checked={auditData.ce || false}
+          name="at151"
+          id="at151"
+          checked={auditData.at151 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="ceText"
-          value={auditData.ceText || ''}
+          name="at152"
+          value={auditData.at152 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[3] = el}
@@ -161,20 +130,19 @@ const Securityc = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="ee">Defined policy for agreements on
-        information transfer ?</label>
+        <label htmlFor="at153">Defined policy for agreements on information transfer?</label>
         <input
           type="checkbox"
-          name="ee"
-          id="ee"
-          checked={auditData.ee || false}
+          name="at153"
+          id="at153"
+          checked={auditData.at153 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="eeText"
-          value={auditData.eeText || ''}
+          name="at154"
+          value={auditData.at154 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[4] = el}
@@ -183,20 +151,19 @@ const Securityc = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="ic">Defined policy for electronic
-        messaging ?</label>
+        <label htmlFor="at155">Defined policy for electronic messaging?</label>
         <input
           type="checkbox"
-          name="ic"
-          id="ic"
-          checked={auditData.eg || false}
+          name="at155"
+          id="at155"
+          checked={auditData.at155 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="icText"
-          value={auditData.icText || ''}
+          name="at156"
+          value={auditData.at156 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[5] = el}
@@ -205,68 +172,48 @@ const Securityc = () => {
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="me">Defined policy for confidentiality
-                            or non-disclosure agreements ?
-        </label>
+        <label htmlFor="at157">Defined policy for confidentiality or non-disclosure agreements?</label>
         <input
           type="checkbox"
-          name="me"
-          id="me"
-          checked={auditData.me || false}
+          name="at157"
+          id="at157"
+          checked={auditData.at157 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="meText"
-          value={auditData.meText || ''}
+          name="at158"
+          value={auditData.at158 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[6] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
       <br />
       <div className='box1'>
-        <label htmlFor="lo">Defined policy for system
-                            acquisition, development and
-                            maintenance ? 
-        </label>
+        <label htmlFor="at159">Defined policy for system acquisition, development, and maintenance?</label>
         <input
           type="checkbox"
-          name="lo"
-          id="lo"
-          checked={auditData.lo || false}
+          name="at159"
+          id="at159"
+          checked={auditData.at159 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="loText"
-          value={auditData.loText || ''}
+          name="at160"
+          value={auditData.at160 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[7] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
     </div>
   );
 };
 
 export default Securityc;
-
-
-
-
-
-
-
-
-
-
-
-

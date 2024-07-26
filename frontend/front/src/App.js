@@ -4,6 +4,9 @@ import Audit from './Components/Audit';
 import Dashboard from './Components/Routes/Dashboard';
 import Navbar from './Components/Navbar/Navbar';
 
+import Table from './Components/Table';
+import Cong from "./Components/Steps/Cong";
+
 
 function App() {
   return (
@@ -13,6 +16,8 @@ function App() {
         <Routes>
           <Route path="/audit" element={<Audit />} />
           <Route path="/dashboard" element={<Dashboard/>}/>
+          <Route path="/Auditl" element={<Table/>}/>
+          <Route path="/Cong" element={<Cong/>}/>
         </Routes>
       </div>
     </Router>

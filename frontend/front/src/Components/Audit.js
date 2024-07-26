@@ -18,7 +18,9 @@ import Securityi from "./Steps/Securityi";
 import Security_asp from "./Steps/Security_asp";
 import Compliance from "./Steps/Compliance";
 import Cong from "./Steps/Cong";
+import Company from "./Steps/Company";
 import "../index.css";
+import axios from "axios";
 
 
 
@@ -30,6 +32,7 @@ import "../index.css";
     const [auditData, setAuditData]=useState('');
     const [finalData,setFinalData]=useState([]);
     const steps = [
+       "Company",
         "Policies",
         "Organization ",
         "HR ",
@@ -50,34 +53,36 @@ import "../index.css";
       const displayStep = (step) => {
          switch (step) {
           case 1:
-            return <Securityp />;
+            return <Company />;
           case 2:
-            return <Securityo />;
+            return <Securityp />;
           case 3:
-            return <Human_reso />;
+            return <Securityo />;
           case 4:
-            return <Asset  />;
+            return <Human_reso />;
           case 5:
-            return <Accesscontrol  />;
+            return <Asset  />;
           case 6:
-            return <Crypto  />;   
+            return <Accesscontrol  />;
           case 7:
-            return <Security_phy_env  />;
+            return <Crypto  />;   
           case 8:
-            return <Oper_security  />;
+            return <Security_phy_env  />;
           case 9:
-            return <Securityc  />;
+            return <Oper_security  />;
           case 10:
-            return <System  />;
+            return <Securityc  />;
           case 11:
-            return <Suppliers  />;
+            return <System  />;
           case 12:
-            return <Securityi />;
+            return <Suppliers  />;
           case 13:
-            return <Security_asp  />;
+            return <Securityi />;
           case 14:
-            return <Compliance/>;
+            return <Security_asp  />;
           case 15:
+            return <Compliance/>;
+          case 16:
             return <Cong/>;
           default:
         } 
@@ -95,6 +100,25 @@ const handleClick = (direction) => {
 }
 
 
+const handleConfirm = async () => {
+  console.log('Handling confirm...');
+  console.log('Audit Data:', auditData); // Log auditData to check its content
+  try {
+    const response = await axios.post('http://localhost:5000/audit', auditData);
+    console.log('Server Response:', response.data); // Log the response data
+    if (response.status === 201) { // Ensure the status code indicates success
+      alert('Audit submitted successfully!');
+      return true; // Indicate success
+    } else {
+      alert('Unexpected response status: ' + response.status);
+      return false; // Indicate failure
+    }
+  } catch (error) {
+    console.error('Error submitting audit:', error);
+    alert('Error submitting audit');
+    return false; // Indicate failure
+  }
+};
     return(
 
        
@@ -125,8 +149,10 @@ const handleClick = (direction) => {
            {currentStep !== steps.length && (
         <StepperControl
           handleClick={handleClick}
+          handleConfirm={handleConfirm}
           currentStep={currentStep}
           steps={steps}
+          
                  />
                )}
         </div>

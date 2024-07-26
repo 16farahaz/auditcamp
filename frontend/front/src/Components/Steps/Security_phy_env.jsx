@@ -25,25 +25,21 @@ const Security_phy_env = () => {
       }
     });
   }, [
-    auditData.ppText,
-    auditData.entText,
-    auditData.offText,
-    auditData.extfText,
-    auditData.wrkText,
-    auditData.dellText,
-    auditData.eqText,
-    auditData.spText,
-
-
-    auditData.cbText,
-
-    
-    auditData.maText,
-    auditData.asText,
-    auditData.osText,
-    auditData.rsText,
-    auditData.unText,
-    auditData.clText,
+  auditData.at86,
+  auditData.at88,
+  auditData.at90,
+  auditData.at92,
+  auditData.at94,
+  auditData.at96,
+  auditData.at98,
+  auditData.at100,
+  auditData.at102,
+  auditData.at104,
+  auditData.at106,
+  auditData.at108,
+  auditData.at110,
+  auditData.at112,
+  auditData.at114,
   
   ]);
 
@@ -55,20 +51,20 @@ const Security_phy_env = () => {
       </div>
 
       <div className='box1'>
-        <label htmlFor="pp">Defined policy for physical security
+        <label htmlFor="at85">Defined policy for physical security
                               perimeter ? </label>
         <input
           type="checkbox"
-          name="pp"
-          id="pp"
-          checked={auditData.pp || false}
+          name="at85"// i put that to make u understand what to chage and how  this match with attribut at85:{type:Boolean}
+          id="at85"
+          checked={auditData.at85 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt1"
-          name="ppText"
-          value={auditData.ppText || ''}
+          id="txt100"
+          name="at86"// this what you put and declare that in the top matching with attribut at86 {type:String}
+          value={auditData.at86 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
@@ -81,16 +77,16 @@ const Security_phy_env = () => {
         controls ? </label>
         <input
           type="checkbox"
-          name="ent"
-          id="ent"
-          checked={auditData.ent || false}
+          name="at87"
+          id="at87"
+          checked={auditData.at87 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt2"
-          name="entText"
-          value={auditData.entText || ''}
+          id="txt101"
+          name="at88"
+          value={auditData.at88 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[1] = el}
@@ -103,16 +99,16 @@ const Security_phy_env = () => {
         rooms and facilities ?</label>
         <input
           type="checkbox"
-          name="off"
-          id="off"
-          checked={auditData.off || false}
+          name="at89"
+          id="at89"
+          checked={auditData.at89 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt3"
-          name="offText"
-          value={auditData.offText || ''}
+          id="at90"
+          name="at90"
+          value={auditData.at90 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[2] = el}
@@ -126,16 +122,16 @@ const Security_phy_env = () => {
                             environmental threats ? </label>
         <input
           type="checkbox"
-          name="ext"
-          id="ext"
-          checked={auditData.ext || false}
+          name="at91"
+          id="at91"
+          checked={auditData.at91 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt4"
-          name="extText"
-          value={auditData.extText || ''}
+          id="at92"
+          name="at92"
+          value={auditData.at92 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[3] = el}
@@ -150,16 +146,16 @@ const Security_phy_env = () => {
                                 secure areas ? </label>
         <input
           type="checkbox"
-          name="wrk"
-          id="wrk"
-          checked={auditData.wrk || false}
+          name="at93"
+          id="at93"
+          checked={auditData.at94|| false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt5"
-          name="wrkText"
-          value={auditData.wrkText || ''}
+          id="txt104"
+          name="at94"
+          value={auditData.at94 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[4] = el}
@@ -173,16 +169,16 @@ const Security_phy_env = () => {
                              loading areas? </label>
         <input
           type="checkbox"
-          name="dell"
-          id="dell"
-          checked={auditData.dell || false}
+          name="at95"
+          id="at95"
+          checked={auditData.at95 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt6"
-          name="dellText"
-          value={auditData.dellText || ''}
+          id="txt105"
+          name="at96"
+          value={auditData.at96 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[5] = el}
@@ -211,16 +207,16 @@ const Security_phy_env = () => {
         and protection?</label>
         <input
           type="checkbox"
-          name="eq"
-          id="eq"
-          checked={auditData.eq || false}
+          name="at97"
+          id="at97"
+          checked={auditData.at97 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt7"
-          name="eqText"
-          value={auditData.eqText || ''}
+          id="text106"
+          name="at98"
+          value={auditData.at98 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[6] = el}
@@ -233,16 +229,16 @@ const Security_phy_env = () => {
         utilities ?   </label>
         <input
           type="checkbox"
-          name="sp"
-          id="sp"
-          checked={auditData.sp || false}
+          name="at99"
+          id="text107"
+          checked={auditData.at99 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt8"
-          name="spText"
-          value={auditData.spText || ''}
+          id="text108"
+          name="at100"
+          value={auditData.at100 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[7] = el}
@@ -257,16 +253,16 @@ const Security_phy_env = () => {
         </label>
         <input
           type="checkbox"
-          name="cb"
-          id="cb"
-          checked={auditData.cb || false}
+          name="at101"
+          id="at101"
+          checked={auditData.at101 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt9"
-          name="cbText"
-          value={auditData.cbText || ''}
+          id="txt109"
+          name="at102"
+          value={auditData.at102 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[8] = el}
@@ -280,16 +276,16 @@ const Security_phy_env = () => {
         maintenance ?</label>
         <input
           type="checkbox"
-          name="ma"
-          id="ma"
-          checked={auditData.ma || false}
+          name="at103"
+          id="txt110"
+          checked={auditData.at103 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt10"
-          name="maText"
-          value={auditData.maText || ''}
+          id="txt111"
+          name="at104"
+          value={auditData.at104 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[9] = el}
@@ -302,16 +298,16 @@ const Security_phy_env = () => {
         assets ? </label>
         <input
           type="checkbox"
-          name="as"
-          id="as"
-          checked={auditData.as || false}
+          name="at105"
+          id="at105"
+          checked={auditData.at105 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt10"
-          name="asText"
-          value={auditData.asText || ''}
+          id="txt112"
+          name="at106"
+          value={auditData.at106 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[10] = el}
@@ -324,16 +320,16 @@ const Security_phy_env = () => {
         equipment and assets off-premises ?</label>
         <input
           type="checkbox"
-          name="os"
-          id="os"
-          checked={auditData.os || false}
+          name="at107"
+          id="at107"
+          checked={auditData.at107 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt11"
-          name="osText"
-          value={auditData.osText || ''}
+          id="txt113"
+          name="at108"
+          value={auditData.at108 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[11] = el}
@@ -346,16 +342,16 @@ const Security_phy_env = () => {
         equipment ?</label>
         <input
           type="checkbox"
-          name="rs"
-          id="rs"
-          checked={auditData.rs || false}
+          name="at109"
+          id="at109"
+          checked={auditData.at109 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt12"
-          name="rsText"
-          value={auditData.ctText || ''}
+          id="txt114"
+          name="at110"
+          value={auditData.at110 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[12] = el}
@@ -368,16 +364,16 @@ const Security_phy_env = () => {
         equipment ?</label>
         <input
           type="checkbox"
-          name="un"
-          id="un"
-          checked={auditData.un || false}
+          name="at111"
+          id="at111"
+          checked={auditData.at111 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt12"
-          name="unText"
-          value={auditData.unText || ''}
+          id="txt115"
+          name="at112"
+          value={auditData.at112 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[13] = el}
@@ -390,16 +386,16 @@ const Security_phy_env = () => {
         clear screen policy? </label>
         <input
           type="checkbox"
-          name="cl"
-          id="cl"
-          checked={auditData.cl || false}
+          name="at113"
+          id="at113"
+          checked={auditData.at113 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt12"
-          name="clText"
-          value={auditData.clText || ''}
+          id="txt116"
+          name="at114"
+          value={auditData.at114 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[14] = el}

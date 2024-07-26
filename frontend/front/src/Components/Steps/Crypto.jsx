@@ -4,94 +4,79 @@ import "../Steps/SecuritypStyle.css"; // Import your CSS file for styling
 
 const Crypto = () => {
   const { auditData, setAuditData } = useContext(StepperContext);
-  const textAreaRef11 = useRef(null); // Ref for textarea 1
-  const textAreaRef12 = useRef(null); // Ref for textarea 2
+  const textAreaRefs = useRef([]);
 
-
-  // Function to handle checkbox change
+  // Fonction pour gérer les changements de cases à cocher
   const handleCheckboxChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.checked });
   };
 
-  // Function to handle textarea change
+  // Fonction pour gérer les changements dans les zones de texte
   const handleTextAreaChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.value });
   };
 
-  // Auto resize textarea based on content
+  // Redimensionner automatiquement les zones de texte en fonction du contenu
   useEffect(() => {
-    if (textAreaRef11.current) {
-      textAreaRef11.current.style.height = 'auto'; // Reset height before calculating
-      textAreaRef11.current.style.height = textAreaRef11.current.scrollHeight + 'px';
-    }
-  }, [auditData.recText]); // Trigger effect when recommendations change
-
-  useEffect(() => {
-    if (textAreaRef12.current) {
-      textAreaRef12.current.style.height = 'auto'; // Reset height before calculating
-      textAreaRef12.current.style.height = textAreaRef12.current.scrollHeight + 'px';
-    }
-  }, [auditData.aText]); // Trigger effect when approvedText changes
-
- 
+    textAreaRefs.current.forEach((ref, index) => {
+      if (ref) {
+        ref.style.height = 'auto'; // Réinitialiser la hauteur avant le calcul
+        ref.style.height = ref.scrollHeight + 'px';
+      }
+    });
+  }, [auditData.at82, auditData.at84]);
 
   return (
-
-
     <div className="bloc1">
       <div className='t1'>
-        <h1> Cryptography</h1>
-        <h3>Cryptographic controls</h3>
+        <h1>Cryptography</h1>
+        <h3>Cryptographic Controls</h3>
       </div>
 
       <div className='box1'>
-        <label htmlFor="rec">Defined policy for use of
-        cryptographic controls ?</label>
+        <label htmlFor="at81">Defined policy for use of cryptographic controls?</label>
         <input
           type="checkbox"
-          name="rec"
-          id="rec"
-          checked={auditData.rec || false}
+          name="at81"
+          id="at81"
+          checked={auditData.at81 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="recText"
-          value={auditData.recText || ''}
+          name="at82"
+          value={auditData.at82 || ''}
           onChange={handleTextAreaChange}
           rows="1"
-          ref={textAreaRef11}
+          ref={el => textAreaRefs.current[0] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
       <br />
 
       <div className='box1'>
-        <label htmlFor="a">Defined policy for key
-        management ?</label>
+        <label htmlFor="at83">Defined policy for key management?</label>
         <input
           type="checkbox"
-          name="a"
-          id="a"
-          checked={auditData.a || false}
+          name="at83"
+          id="at83"
+          checked={auditData.at83 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt2"
-          name="aText"
-          value={auditData.aText || ''}
+          name="at84"
+          value={auditData.at84 || ''}
           onChange={handleTextAreaChange}
           rows="1"
-          ref={textAreaRef12}
+          ref={el => textAreaRefs.current[1] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
     </div>
   );
 };
 
 export default Crypto;
-

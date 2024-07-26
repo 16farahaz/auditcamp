@@ -1,6 +1,9 @@
-export default function Cong() {
-    return (
-      <div className="container md:mt-10">
+import React from 'react'
+
+
+function Cong() {
+  return (
+    <div className="container md:mt-10">
         <div className="flex flex-col items-center">
           <div className="wrapper">
             <svg
@@ -23,7 +26,7 @@ export default function Cong() {
             </svg>
           </div>
   
-          <div className="mt-3 text-xl font-semibold uppercase text-green-500">
+          <div className="mt-3 text-xl left-px font-semibold uppercase text-green-500">
             Congratulations!
           </div>
           <div className="text-lg font-semibold text-gray-500">
@@ -31,10 +34,15 @@ export default function Cong() {
           </div>
           <a className="mt-10" href="/user/dashboard">
             <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
-              Close
+             New Audit
             </button>
           </a>
+          <a className="mt-10" href="">    <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
+              Audit List
+            </button></a>
         </div>
       </div>
-    );
-  }
+  )
+}
+
+export default Cong;

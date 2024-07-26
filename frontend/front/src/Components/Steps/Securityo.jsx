@@ -32,31 +32,31 @@ const Securityo = () => {
 
   useEffect(() => {
     resizeTextArea(textAreaRef1);
-  }, [auditData.definedText]);
+  }, [auditData.at8]);
 
   useEffect(() => {
     resizeTextArea(textAreaRef2);
-  }, [auditData.segText]);
+  }, [auditData.a10]);
 
   useEffect(() => {
     resizeTextArea(textAreaRef3);
-  }, [auditData.bodyText]);
+  }, [auditData.a12]);
 
   useEffect(() => {
     resizeTextArea(textAreaRef4);
-  }, [auditData.contactText]);
+  }, [auditData.a14]);
 
   useEffect(() => {
     resizeTextArea(textAreaRef5);
-  }, [auditData.infoText]);
+  }, [auditData.a16]);
 
   useEffect(() => {
     resizeTextArea(textAreaRef6);
-  }, [auditData.mobileText]);
+  }, [auditData.a18]);
 
   useEffect(() => {
     resizeTextArea(textAreaRef7);
-  }, [auditData.policyText]);
+  }, [auditData.a20]);
 
   return (
     <div className="bloc1">
@@ -69,16 +69,16 @@ const Securityo = () => {
         <label htmlFor="securityPoliciesExist">Roles and responsibilities defined?</label>
         <input
           type="checkbox"
-          name="defined"
-          id="defined"
-          checked={auditData.defined || false}
+          name="at7"
+          id="at7"
+          checked={auditData.at7 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt1"
-          name="definedText"
-          value={auditData.definedText || ''}
+          id="txt4"
+          name="at8"
+          value={auditData.at8 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef1}
@@ -91,16 +91,16 @@ const Securityo = () => {
         <label htmlFor="approved">Segregation of duties defined?</label>
         <input
           type="checkbox"
-          name="seg"
-          id="seg"
-          checked={auditData.seg || false}
+          name="at9"
+          id="at9"
+          checked={auditData.at9 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt2"
-          name="segText"
-          value={auditData.segText || ''}
+          id="txt5"
+          name="at10"
+          value={auditData.at10 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef2}
@@ -113,16 +113,16 @@ const Securityo = () => {
         <label htmlFor="body">Verification body / authority contacted for compliance verification?</label>
         <input
           type="checkbox"
-          name="body"
-          id="body"
-          checked={auditData.body || false}
+          name="at11"
+          id="at11"
+          checked={auditData.at11 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
-          id="txt3"
-          name="bodyText"
-          value={auditData.bodyText || ''}
+          id="txt6"
+          name="at12"
+          value={auditData.at12 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef3}
@@ -135,16 +135,16 @@ const Securityo = () => {
         <label htmlFor="evidence">Establish contact with special interest groups regarding compliance?</label>
         <input
           type="checkbox"
-          name="contact"
-          id="contact"
-          checked={auditData.contact || false}
+          name="at13"
+          id="at13"
+          checked={auditData.at13 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="contactText"
-          value={auditData.contactText || ''}
+          name="at14"
+          value={auditData.at14 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef4}
@@ -157,16 +157,16 @@ const Securityo = () => {
         <label htmlFor="info">Evidence of information security in project management?</label>
         <input
           type="checkbox"
-          name="info"
-          id="info"
-          checked={auditData.info || false}
+          name="at15"
+          id="at15"
+          checked={auditData.at15 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt5"
-          name="infoText"
-          value={auditData.infoText || ''}
+          name="at16"
+          value={auditData.at16 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef5}
@@ -183,16 +183,16 @@ const Securityo = () => {
         <label htmlFor="mobile">Defined policy for mobile devices?</label>
         <input
           type="checkbox"
-          name="mobile"
-          id="mobile"
-          checked={auditData.mobile || false}
+          name="at17"
+          id="at17"
+          checked={auditData.at17|| false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt6"
-          name="mobileText"
-          value={auditData.mobileText || ''}
+          name="at18"
+          value={auditData.at18 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef6}
@@ -205,16 +205,16 @@ const Securityo = () => {
         <label htmlFor="remotely">Defined policy for working remotely?</label>
         <input
           type="checkbox"
-          name="policy"
-          id="policy"
-          checked={auditData.policy || false}
+          name="at19"
+          id="at19"
+          checked={auditData.at19 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt7"
-          name="policyText"
-          value={auditData.policyText || ''}
+          name="at20"
+          value={auditData.at20 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef7}

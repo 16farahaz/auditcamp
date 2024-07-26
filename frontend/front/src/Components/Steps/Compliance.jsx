@@ -2,7 +2,6 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { StepperContext } from '../contexts/ContextStepper';
 import "../Steps/SecuritypStyle.css"; // Import your CSS file for styling
 
-
 const Compliance = () => {
   const { auditData, setAuditData } = useContext(StepperContext);
   const textAreaRefs = useRef([]);
@@ -26,45 +25,36 @@ const Compliance = () => {
       }
     });
   }, [
-    auditData.ideText,
-    auditData.telText,
-    auditData.corText,
-    auditData.vacyText,
-    auditData.regText,
-   
-    auditData.thText,
-    auditData.chText,
-    
-    
-
-  
+    auditData.at178,
+    auditData.at180,
+    auditData.at182,
+    auditData.at184,
+    auditData.at186,
+    auditData.at188,
+    auditData.at190,
   ]);
 
   return (
     <div className="bloc1">
+      <div className='t1'>
+        <h1>Compliance</h1>
+        <h3>Compliance with legal and contractual requirements</h3>
+      </div>
 
-     <div className='t1'>
-     <h1>Compliance</h1>
-      <h3>Compliance with legal and contractual requirements  </h3>
-     </div>
-
-     
       <div className='box1'>
-        <label htmlFor="ide">Defined policy for identification of
-applicable legislation and
-contractual requirement ? </label>
+        <label htmlFor="at177">Defined policy for identification of applicable legislation and contractual requirements?</label>
         <input
           type="checkbox"
-          name="ide"
-          id="ide"
-          checked={auditData.ide || false}
+          name="at177"
+          id="at177"
+          checked={auditData.at177 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="ideText"
-          value={auditData.ideText || ''}
+          name="at178"
+          value={auditData.at178 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
@@ -73,20 +63,19 @@ contractual requirement ? </label>
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="tel">Defined policy for intellectual
-        property rights ? </label>
+        <label htmlFor="at179">Defined policy for intellectual property rights?</label>
         <input
           type="checkbox"
-          name="tel"
-          id="tel"
-          checked={auditData.tel || false}
+          name="at179"
+          id="at179"
+          checked={auditData.at179 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="telText"
-          value={auditData.telText || ''}
+          name="at180"
+          value={auditData.at180 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[1] = el}
@@ -95,43 +84,40 @@ contractual requirement ? </label>
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="cor">Defined policy for protection of
-        records ? </label>
+        <label htmlFor="at181">Defined policy for protection of records?</label>
         <input
           type="checkbox"
-          name="cor"
-          id="cor"
-          checked={auditData.cor || false}
+          name="at181"
+          id="at181"
+          checked={auditData.at181 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="corText"
-          value={auditData.corText || ''}
+          name="at182"
+          value={auditData.at182 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[2] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
+      <br />
       <div className='box1'>
-        <label htmlFor="vacy">Defined policy for privacy and
-protection of personally
-identifiable information ?</label>
+        <label htmlFor="at183">Defined policy for privacy and protection of personally identifiable information?</label>
         <input
           type="checkbox"
-          name="vacy"
-          id="vacy"
-          checked={auditData.vacy || false}
+          name="at183"
+          id="at183"
+          checked={auditData.at183 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="vacyText"
-          value={auditData.vacyText || ''}
+          name="at184"
+          value={auditData.at184 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[3] = el}
@@ -140,66 +126,44 @@ identifiable information ?</label>
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="reg">Defined policy for regulation of
-        cryptographic control ?</label>
+        <label htmlFor="at185">Defined policy for regulation of cryptographic control?</label>
         <input
           type="checkbox"
-          name="reg"
-          id="reg"
-          checked={auditData.reg || false}
+          name="at185"
+          id="at185"
+          checked={auditData.at185 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="regText"
-          value={auditData.regText || ''}
+          name="at186"
+          value={auditData.at186 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[4] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-      
       <br />
       <div className='t1'>
-      <h3>Independent review of information security</h3>
+        <h3>Independent review of information security</h3>
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="th">Defined policy for compliance
-        with security policies and
-        standards ?</label>
+        <label htmlFor="at187">Defined policy for compliance with security policies and standards?</label>
         <input
           type="checkbox"
-          name="th"
-          id="th"
-          checked={auditData.th || false}
+          name="at187"
+          id="at187"
+          checked={auditData.at187 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="thText"
-          value={auditData.thText || ''}
+          name="at188"
+          value={auditData.at188 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[5] = el}
@@ -208,44 +172,27 @@ identifiable information ?</label>
       </div>
       <br />
       <div className='box1'>
-        <label htmlFor="ch">Defined policy for technical
-        compliance review ? 
-        </label>
+        <label htmlFor="at189">Defined policy for technical compliance review?</label>
         <input
           type="checkbox"
-          name="ch"
-          id="ch"
-          checked={auditData.ch || false}
+          name="at189"
+          id="at189"
+          checked={auditData.at189 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="chText"
-          value={auditData.chText || ''}
+          name="at190"
+          value={auditData.at190 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[6] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-
-
-
     </div>
   );
 };
 
 export default Compliance;
-
-
-
-
-
-
-
-
-
-
-
-

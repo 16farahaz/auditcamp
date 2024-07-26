@@ -24,21 +24,21 @@ const Securityp = () => {
       textAreaRef1.current.style.height = 'auto'; // Reset height before calculating
       textAreaRef1.current.style.height = textAreaRef1.current.scrollHeight + 'px';
     }
-  }, [auditData.recommendations]); // Trigger effect when recommendations change
+  }, [auditData.at2]); // Trigger effect when recommendations change
 
   useEffect(() => {
     if (textAreaRef2.current) {
       textAreaRef2.current.style.height = 'auto'; // Reset height before calculating
       textAreaRef2.current.style.height = textAreaRef2.current.scrollHeight + 'px';
     }
-  }, [auditData.approvedText]); // Trigger effect when approvedText changes
+  }, [auditData.at4]); // Trigger effect when approvedText changes
 
   useEffect(() => {
     if (textAreaRef3.current) {
       textAreaRef3.current.style.height = 'auto'; // Reset height before calculating
       textAreaRef3.current.style.height = textAreaRef3.current.scrollHeight + 'px';
     }
-  }, [auditData.evidenceText]); // Trigger effect when evidenceText changes
+  }, [auditData.at6]); // Trigger effect when evidenceText changes
 
   return (
     <div className="bloc1">
@@ -51,16 +51,16 @@ const Securityp = () => {
         <label htmlFor="securityPoliciesExist">Security Policies Exist?</label>
         <input
           type="checkbox"
-          name="securityPoliciesExist"
-          id="securityPoliciesExist"
-          checked={auditData.securityPoliciesExist || false}
+          name="at1"
+          id="at1"
+          checked={auditData.at1 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt1"
-          name="recommendations"
-          value={auditData.recommendations || ''}
+          name="at2"
+          value={auditData.at2 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef1}
@@ -73,16 +73,16 @@ const Securityp = () => {
         <label htmlFor="approved">Verify All Policies Approved by Management?</label>
         <input
           type="checkbox"
-          name="approved"
-          id="approved"
-          checked={auditData.approved || false}
+          name="at3"
+          id="at3"
+          checked={auditData.at3 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt2"
-          name="approvedText"
-          value={auditData.approvedText || ''}
+          name="at4"
+          value={auditData.at4 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef2}
@@ -92,19 +92,19 @@ const Securityp = () => {
       <br />
 
       <div className='box1'>
-        <label htmlFor="evidence">Evidence of Compliance?</label>
+        <label htmlFor="at5">Evidence of Compliance?</label>
         <input
           type="checkbox"
-          name="evidence"
-          id="evidence"
-          checked={auditData.evidence || false}
+          name="at5"
+          id="at5"
+          checked={auditData.at5 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt3"
-          name="evidenceText"
-          value={auditData.evidenceText || ''}
+          name="at6"
+          value={auditData.at6 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={textAreaRef3}

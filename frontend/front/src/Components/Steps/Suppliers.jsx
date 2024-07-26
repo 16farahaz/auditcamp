@@ -2,11 +2,10 @@ import React, { useContext, useEffect, useRef } from 'react';
 import { StepperContext } from '../contexts/ContextStepper';
 import "../Steps/SecuritypStyle.css"; // Import your CSS file for styling
 
-
 const Suppliers = () => {
   const { auditData, setAuditData } = useContext(StepperContext);
   const textAreaRefs = useRef([]);
-  
+
   // Function to handle checkbox change
   const handleCheckboxChange = (event) => {
     setAuditData({ ...auditData, [event.target.name]: event.target.checked });
@@ -26,63 +25,37 @@ const Suppliers = () => {
       }
     });
   }, [
-    auditData.suText,
-  
-   
-
-  
+    auditData.at170,
   ]);
 
   return (
     <div className="bloc1">
-
-     <div className='t1'>
-     <h1>Suppliers relationships</h1>
-   
-     </div>
-
-     
+      <div className='t1'>
+        <h1>Suppliers relationships</h1>
+      </div>
+      
       <div className='box1'>
-        <label htmlFor="su">Defined policy for supplier
-        relationships ? </label>
+        <label htmlFor="at169">Defined policy for supplier relationships?</label>
         <input
           type="checkbox"
-          name="su"
-          id="su"
-          checked={auditData.su || false}
+          name="at169"
+          id="at169"
+          checked={auditData.at169 || false}
           onChange={handleCheckboxChange}
         />
         <textarea
           className="txt1"
           id="txt4"
-          name="suText"
-          value={auditData.suText || ''}
+          name="at170"
+          value={auditData.at170 || ''}
           onChange={handleTextAreaChange}
           rows="1"
           ref={el => textAreaRefs.current[0] = el}
           placeholder='Any recommendations'
         ></textarea>
       </div>
-     
-     
-    
-     
-
-
     </div>
   );
 };
 
 export default Suppliers;
-
-
-
-
-
-
-
-
-
-
-
-

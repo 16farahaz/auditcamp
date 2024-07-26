@@ -1,0 +1,135 @@
+/* TableStyle.css */
+
+.container {
+    margin-left: 20px;
+    margin-top: 25px;
+}
+   
+.table-wrapper {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+   
+.table-title {
+    background-color: #ffffff; /* Blue background */
+    color: #fff;
+    padding: 15px 20px;
+    font-size: 1.5rem; /* Adjust the title font size */
+    text-transform: uppercase; /* Uppercase text */
+    font-weight: bold; /* Bold font */
+}
+   
+.table1 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem; /* Default font size for table content */
+    color: #1d978d; /* Dark gray text color */
+}
+.tbody {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    font-size: 1rem; /* Default font size for table content */
+    color: #445250; /* Dark gray text color */
+}
+   
+.table1 th,
+.table1 td {
+    padding: 12px 15px;
+    text-align: left;
+}
+
+.table1 th {
+    font-weight: bold; /* Bold headers */
+    text-transform: uppercase; /* Uppercase headers */
+}
+
+.table1 tbody tr:nth-child(even) {
+    background-color: #f0f0f0; /* Lighter gray background for even rows */
+}
+   
+.table1 tbody tr:hover {
+    background-color: #e0e0e0; /* Hover color */
+}
+   
+.btn-success {
+    background-color: #259b81; /* Green button */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    font-size: 1rem; /* Button font size */
+}
+
+.btn-success:hover {
+    background-color: #e3e6e3; /* Darker green on hover */
+}
+   
+.edit,
+.delete {
+    color: #007bff; /* Blue color */
+    margin-right: 10px;
+    font-size: 1rem; /* Font size for edit and delete buttons */
+}
+   
+.edit:hover,
+.delete:hover {
+    color: #0056b3; /* Darker blue on hover */
+}
+   
+.cursor-pointer {
+    cursor: pointer;
+}
+   
+.consultbtn,
+.deletebtn {
+    font-size: 1.2rem; /* Larger font size for icons */
+}
+   
+/* Tooltip styles (optional) */
+[data-bs-toggle="tooltip"] {
+    position: relative;
+    cursor: pointer;
+}
+   
+[data-bs-toggle="tooltip"]::after {
+    content: attr(title);
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #fff;
+    padding: 5px 8px;
+    border-radius: 4px;
+    bottom: 120%;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+   
+[data-bs-toggle="tooltip"]:hover::after {
+    opacity: 1;
+}
+.search{
+    margin-left: 900px;
+}
+.btncn{
+    background-color: #259b81; /* Green button */
+    color: #ffffff;
+    border: none;
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 20px;
+    font-size: 1rem; /* Button font size */
+
+}
