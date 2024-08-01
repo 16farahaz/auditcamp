@@ -1,0 +1,133 @@
+.titrerp {
+    text-align: center;
+    margin: 20px 0;
+    padding: 10px;
+    font-size: 2rem; /* Adjust the title font size */
+    text-transform: uppercase;
+    font-weight: bold;
+    color: #1d978d;
+
+    
+   
+  }
+  
+/* Styles pour centrer les titres */
+.table2 h1,
+.table2 h2 {
+    text-align: center;
+    margin: 0; /* Pour s'assurer qu'il n'y a pas de marge par défaut */
+    padding: 10px 0; /* Pour ajouter un peu de padding */
+}
+.container1 {
+   /* Reduce the top margin */
+    max-width: 200%; 
+    margin-left: 150px;
+    margin-top: 25px; 
+    margin-right: 150px;  /* Optional: Set a maximum width for better control */
+}
+
+   
+.table-wrapper1 {
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+}
+   
+.table-title {
+    background-color: #ffffff; /* Updated to a blue background */
+    color: #fff;
+    padding: 10px 15px; /* Reduce padding */
+    font-size: 1.2rem; /* Adjust the title font size */
+    text-transform: uppercase;
+    font-weight: bold;
+}
+   
+.table2 {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px; /* Reduce top margin */
+    font-size: 0.9rem; /* Reduce font size */
+    color: #1d978d;
+}
+.trtxt {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 15px; /* Reduce top margin */
+    font-size: 0.9rem; /* Reduce font size */
+    color: #445250;
+}
+   
+.table2 th,
+.table2 td {
+    padding: 10px 12px; /* Reduce padding */
+    text-align: left;
+}
+
+.table2 th {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.table2 tbody tr:nth-child(even) {
+    background-color: #f0f0f0;
+}
+   
+.table2 tbody tr:hover {
+    background-color: #e0e0e0;
+}
+   
+
+
+
+   
+
+   
+.cursor-pointer {
+    cursor: pointer;
+}
+   
+
+
+
+
+.strong {
+    font-weight: bold;
+  }
+  /* Style for centered bold text */
+.strong1 {
+    font-weight: bold;
+    text-align: center;
+    display: block; /* Ensures the heading takes up the full width */
+  }
+
+
+  .liena {
+    text-decoration: none; /* Remove underline from the link */
+    margin-left: 80%;
+    
+  }
+  
+  .btntsk {
+    background-color: #1d978d; /* Primary button color */
+    color: white; /* Text color */
+    border: none; /* Remove border */
+    padding: 10px 20px; /* Padding for the button */
+    font-size: 1em; /* Font size */
+    border-radius: 5px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease; /* Smooth transition for background color */
+    text-align: center; /* Center the text */
+    display: inline-block; /* Allow proper padding and margins */
+  }
+  
+  .btntsk:hover {
+    background-color: #1d978d; /* Darker shade for hover effect */
+  }
+  
+  .btntsk:active {
+    background-color: #1d978d; /* Even darker shade for active state */
+    box-shadow: 0 5px hsl(172, 72%, 27%); /* Add a shadow effect */
+    transform: translateY(4px); /* Move the button down slightly */
+  }
+  

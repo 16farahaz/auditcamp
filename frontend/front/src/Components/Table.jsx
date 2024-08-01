@@ -96,7 +96,7 @@ function Table() {
                   <td>{audit.norme}</td>
                   <td>{audit.date}</td>
                   <td>
-                    <a href="#x" className="edit" data-bs-toggle="modal" data-bs-target="#consultauditModal">
+                    <a href={`/ConsultAudit/${audit._id}`} className="edit" data-bs-toggle="modal" data-bs-target="#consultauditModal">
                       <button className='btncn'>Consult</button>
                     </a>
                   </td>
@@ -111,3 +111,5 @@ function Table() {
 }
 
 export default Table;
+
+
