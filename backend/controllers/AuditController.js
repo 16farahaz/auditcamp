@@ -20,6 +20,7 @@
 
             // Extract data from the request body
             const { 
+
                 nom, emailc, numt, rssi, emailr, auditor, norme, date,at1, at2, at3, at4, at5, at6,
                 at7, at8, at9, at10, at11, at12, at13, at14, at15, at16, at17, at18, at19, at20,
                 at21, at22, at23, at24, at25, at26, at27, at28, at29, at30, at31, at32,
@@ -105,17 +106,18 @@
             res.status(500).json({ message: error.message });
         }
     };
-    // Get a single audit by ID
-    exports.getAuditById = async (req, res) => {
-        try {
-            const audit = await Audit.findById(req.params.id);
-            console.log(id);
-            if (!audit) return res.status(404).json({ message: 'Audit not found' });
-            res.status(200).json(audit);
-        } catch (error) {
-            res.status(500).json({ message: error.message });
-        }
-    };
+  // Get a single audit by ID
+exports.getAuditById = async (req, res) => {
+    console.log('ID:', req.params.id);
+    try {
+        const audit = await Audit.findById(req.params.id);
+        if (!audit) return res.status(404).json({ message: 'Audit not found' });
+        res.status(200).json(audit);
+    } catch (error) {
+        res.status(500).json({ message: error.message });
+    }
+};
+
 
     // Update an audit by ID
     exports.updateAuditById = async (req, res) => {

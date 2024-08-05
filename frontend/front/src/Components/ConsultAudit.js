@@ -3,10 +3,25 @@ import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../Components/ConsultAuditStyle.css'; // Ajuster le chemin selon la structure de votre projet
+import { Alert } from '@mui/material';
 
 function ConsultAudit() {
   const { id } = useParams(); // Extraire l'ID de l'audit à partir de l'URL
   const [audit, setAudit] = useState(null);
+  const [isButtonDisabled, setIsButtonDisabled] = useState(false);  
+  const [isButtonDisabled2, setIsButtonDisabled2] = useState(false);
+  const [isButtonDisabled3, setIsButtonDisabled3] = useState(false);
+  const [isButtonDisabled4, setIsButtonDisabled4] = useState(false);
+  const [isButtonDisabled5, setIsButtonDisabled5] = useState(false);
+  const [isButtonDisabled6, setIsButtonDisabled6] = useState(false);
+  const [isButtonDisabled7, setIsButtonDisabled7] = useState(false);
+  const [isButtonDisabled8, setIsButtonDisabled8] = useState(false);
+  const [isButtonDisabled9, setIsButtonDisabled9] = useState(false);
+  const [isButtonDisabled10, setIsButtonDisabled10] = useState(false);
+  const [isButtonDisabled11, setIsButtonDisabled11] = useState(false);
+  const [isButtonDisabled12, setIsButtonDisabled12] = useState(false);
+  const [isButtonDisabled13, setIsButtonDisabled13] = useState(false);
+  const [isButtonDisabled14, setIsButtonDisabled14] = useState(false);
 
   useEffect(() => {
     axios.get(`http://localhost:5000/audit/${id}`)
@@ -15,6 +30,508 @@ function ConsultAudit() {
       })
       .catch(err => console.log(err));
   }, [id]);
+
+
+
+  const handleAddData = () => {
+    if (isButtonDisabled) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+
+    axios.post('http://localhost:5000/securityp/add', {
+      State: '',
+      file: '', 
+      at1: audit.at1,
+      at2: audit.at2,
+      at3: audit.at3,
+      at4: audit.at4,
+      at5: audit.at5,
+      at6: audit.at6
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  const handleAddData2 = () => {
+    if (isButtonDisabled2) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/securityo/add', {
+      State: '',
+      file: '', 
+    
+      at7: audit.at7,
+      at8: audit.at8,
+      at9: audit.at9,
+      at10: audit.at10,
+      at11: audit.at11,
+      at12: audit.at12,
+      at13: audit.at13,
+      at14: audit.at14,
+      at15: audit.at15,
+      at16: audit.at16,
+      at17: audit.at17,
+      at18: audit.at18,
+      at19: audit.at19,
+      at20: audit.at20
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled2(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+
+  const handleAddData3 = () => {
+    if (isButtonDisabled3) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/human/add', {
+      State: '',
+      file: '', 
+      at21: audit.at21,
+      at22: audit.at22,
+      at23: audit.at23,
+      at24: audit.at24,
+      at25: audit.at25,
+      at26: audit.at26,
+      at27: audit.at27,
+      at28: audit.at28,
+      at29: audit.at29,
+      at30: audit.at30,
+      at31: audit.at31,
+      at32: audit.at32
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled3(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+  const handleAddData4 = () => {
+    if (isButtonDisabled4) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/asset/add', {
+      State: '',
+      file: '', 
+      at33: audit.at33,
+      at34: audit.at34,
+      at35: audit.at35,
+      at36: audit.at36,
+      at37: audit.at37,
+      at38: audit.at38,
+      at39: audit.at39,
+      at40: audit.at40,
+      at41: audit.at41,
+      at42: audit.at42,
+      at43: audit.at43,
+      at44: audit.at44,
+      at45: audit.at45,
+      at46: audit.at46,
+      at47: audit.at47,
+      at48: audit.at48,
+      at49: audit.at49,
+      at50: audit.at50,
+      at51: audit.at51,
+      at52: audit.at52
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled4(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+
+
+
+  const handleAddData5 = () => {
+    if (isButtonDisabled5) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/access/add', {
+      State: '',
+      file: '', 
+      at53: audit.at53,
+      at54: audit.at54,
+      at55: audit.at55,
+      at56: audit.at56,
+      at57: audit.at57,
+      at58: audit.at58,
+      at59: audit.at59,
+      at60: audit.at60,
+      at61: audit.at61,
+      at62: audit.at62,
+      at63: audit.at63,
+      at64: audit.at64,
+      at65: audit.at65,
+      at66: audit.at66,
+      at67: audit.at67,
+      at68: audit.at68,
+      at69: audit.at69,
+      at70: audit.at70,
+      at71: audit.at71,
+      at72: audit.at72,
+      at73: audit.at73,
+      at74: audit.at74,
+      at75: audit.at75,
+      at76: audit.at76,
+      at77: audit.at77,
+      at78: audit.at78,
+      at79: audit.at79,
+      at80: audit.at80
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled5(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+
+
+  const handleAddData6 = () => {
+    if (isButtonDisabled6) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/crypto/add', {
+      State: '',
+      file: '', 
+      at81: audit.at81,
+      at82: audit.at82,
+      at83: audit.at83,
+      at84: audit.at84
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled6(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+  const handleAddData7 = () => {
+    if (isButtonDisabled7) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/spe/add', {
+      State: '',
+      file: '', 
+      at85: audit.at85,
+      at86: audit.at86,
+      at87: audit.at87,
+      at88: audit.at88,
+      at89: audit.at89,
+      at90: audit.at90,
+      at91: audit.at91,
+      at92: audit.at92,
+      at93: audit.at93,
+      at94: audit.at94,
+      at95: audit.at95,
+      at96: audit.at96,
+      at97: audit.at97,
+      at98: audit.at98,
+      at99: audit.at99,
+      at100: audit.at100,
+      at101: audit.at101,
+      at102: audit.at102,
+      at103: audit.at103,
+      at104: audit.at104,
+      at105: audit.at105,
+      at106: audit.at106,
+      at107: audit.at107,
+      at108: audit.at108,
+      at109: audit.at109,
+      at110: audit.at110,
+      at111: audit.at111,
+      at112: audit.at112,
+      at113: audit.at113,
+      at114: audit.at114
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled7(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+  
+  const handleAddData8 = () => {
+    if (isButtonDisabled8) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/oper/add', {
+      State: '',
+      file: '', 
+      at115: audit.at115,
+      at116: audit.at116,
+      at117: audit.at117,
+      at118: audit.at118,
+      at119: audit.at119,
+      at120: audit.at120,
+      at121: audit.at121,
+      at122: audit.at122,
+      at123: audit.at123,
+      at124: audit.at124,
+      at125: audit.at125,
+      at126: audit.at126,
+      at127: audit.at127,
+      at128: audit.at128,
+      at129: audit.at129,
+      at130: audit.at130,
+      at131: audit.at131,
+      at132: audit.at132,
+      at133: audit.at133,
+      at134: audit.at134,
+      at135: audit.at135,
+      at136: audit.at136,
+      at137: audit.at137,
+      at138: audit.at138,
+      at139: audit.at139,
+      at140: audit.at140,
+      at141: audit.at141,
+      at142: audit.at142,
+      at143: audit.at143,
+      at144: audit.at144
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled8(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+  const handleAddData9 = () => {
+    if (isButtonDisabled9) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/oper/add', {
+      State: '',
+      file: '', 
+      at145: audit.at145,
+      at146: audit.at146,
+      at147: audit.at147,
+      at148: audit.at148,
+      at149: audit.at149,
+      at150: audit.at150,
+      at151: audit.at151,
+      at152: audit.at152,
+      at153: audit.at153,
+      at154: audit.at154,
+      at155: audit.at155,
+      at156: audit.at156,
+      at157: audit.at157,
+      at158: audit.at158,
+      at159: audit.at159,
+      at160: audit.at160
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled9(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+
+  const handleAddData10 = () => {
+    if (isButtonDisabled10) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/securityc/add', {
+      State: '',
+      file: '', 
+      at161: audit.at161,
+      at162: audit.at162,
+      at163: audit.at163,
+      at164: audit.at164,
+      at165: audit.at165,
+      at166: audit.at166,
+      at167: audit.at167,
+      at168: audit.at168
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled10(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+
+
+
+
+  const handleAddData11 = () => {
+    if (isButtonDisabled11) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/system/add', {
+      State: '',
+      file: '', 
+      at169: audit.at169,
+      at170: audit.at170
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled11(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  const handleAddData12 = () => {
+    if (isButtonDisabled12) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/suppliers/add', {
+      State: '',
+      file: '', 
+      at171: audit.at171,
+      at172: audit.at172
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled12(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+  
+  const handleAddData13 = () => {
+    if (isButtonDisabled13) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/secasp/add', {
+      State: '',
+      file: '', 
+      at173: audit.at173,
+      at174: audit.at174,
+      at175: audit.at175,
+      at176: audit.at176
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled13(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+
+
+  const handleAddData14 = () => {
+    if (isButtonDisabled14) {
+      alert('Data already assigned to the employee');
+      return;
+    }
+  
+    axios.post('http://localhost:5000/compliance/add', {
+      State: '',
+      file: '', 
+      at177: audit.at177,
+      at178: audit.at178,
+      at179: audit.at179,
+      at180: audit.at180,
+      at181: audit.at181,
+      at182: audit.at182,
+      at183: audit.at183,
+      at184: audit.at184,
+      at185: audit.at185,
+      at186: audit.at186,
+      at187: audit.at187,
+      at188: audit.at188,
+      at189: audit.at189,
+      at190: audit.at190
+    })
+    .then(response => {
+      console.log('Data added successfully:', response.data);
+      alert('Data added successfully!');
+      setIsButtonDisabled14(true);
+    })
+    .catch(err => {
+      console.error('Error adding data:', err);
+      alert('Error adding data!');
+    });
+  };
+  
+
+
+
+
+
 
   if (!audit) {
     return <div>Loading...</div>; // Afficher un état de chargement pendant que les données sont récupérées
@@ -52,7 +569,7 @@ function ConsultAudit() {
       
         <div className="table-wrapper1">
             <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData} >Assign Task </button></a>
           <table className="table2">
             <thead>
             <tr>
@@ -93,7 +610,7 @@ function ConsultAudit() {
      
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk'onClick={handleAddData2}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -157,7 +674,7 @@ function ConsultAudit() {
  
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData3}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -225,7 +742,7 @@ function ConsultAudit() {
       
         <div className="table-wrapper1"> 
             <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData4}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -320,7 +837,7 @@ function ConsultAudit() {
       
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData5}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -448,7 +965,7 @@ function ConsultAudit() {
 
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData6}>Assign Task </button></a>
           <table className="table2">
             <thead>
             <tr>
@@ -493,7 +1010,7 @@ function ConsultAudit() {
       
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData7}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -625,7 +1142,7 @@ function ConsultAudit() {
    
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData8}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -786,7 +1303,7 @@ function ConsultAudit() {
     
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData9 }>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -872,7 +1389,7 @@ function ConsultAudit() {
       <div className="container1 max-w-full shadow-xl rounded-2xl pb-2 bg-white">
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData10}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -936,7 +1453,7 @@ function ConsultAudit() {
     
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData11}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -974,7 +1491,7 @@ function ConsultAudit() {
    
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk'onClick={handleAddData12}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -1009,7 +1526,7 @@ function ConsultAudit() {
       
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData13}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
@@ -1059,7 +1576,7 @@ function ConsultAudit() {
      
         <div className="table-wrapper1">
         <br></br>
-        <a href='###' className='liena'><button className='btntsk'>Assign Task </button></a>
+        <a href='###' className='liena'><button className='btntsk' onClick={handleAddData14}>Assign Task </button></a>
           <table className="table2">
             <thead>
               <tr>
