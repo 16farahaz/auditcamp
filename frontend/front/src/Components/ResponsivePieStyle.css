@@ -1,0 +1,77 @@
+.slideshow-container {
+  position: relative;
+  margin-left: 50px;
+  margin-right: 30px;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.mySlides {
+  display: none;
+  text-align: center;
+}
+
+.mySlides.active {
+  display: block;
+}
+
+.slide {
+  display: inline-block;
+  margin: 20px;
+  vertical-align: top;
+  color:#1d978d;
+  font-weight: bold; /* Bold font */
+  font-size: 1.2rem;
+}
+
+.pie-container {
+  height: 150px;
+  width: 300px;
+}
+
+.prev, .next {
+  cursor: pointer;
+  position: absolute;
+  top: 50%;
+  width: auto;
+  padding: 16px;
+  margin-top: -22px;
+  color: rgb(23, 129, 107);
+  font-weight: bold;
+  font-size: 18px;
+  transition: 0.6s ease;
+  border-radius: 0 3px 3px 0;
+  user-select: none;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev {
+  left: 0;
+  border-radius: 3px 3px 3px 3px;
+}
+
+.prev:hover, .next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+.hidden {
+  display: none;
+}
+
+
+/* Container for the pie chart */
+.pie-container {
+  height: 150px; /* Adjust height as necessary */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}

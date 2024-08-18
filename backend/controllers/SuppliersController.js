@@ -4,7 +4,7 @@ const Suppliers = require("../models/Suppliers");
 // Create a new supplier
 exports.createSupplier = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSupplier = async (req, res) => {
         }
 
         const newSupplier = new Suppliers({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getSupplierById = async (req, res) => {
 // Update a supplier by ID
 exports.updateSupplierById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const supplier = await Suppliers.findById(req.params.id);
         if (!supplier) {
             return res.status(404).json({ message: "Supplier not found" });
@@ -67,7 +69,11 @@ exports.updateSupplierById = async (req, res) => {
 
         const updatedSupplier = await Suppliers.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

@@ -4,7 +4,7 @@ const Oper_security = require("../models/Oper_security");
 // Create a new oper_security
 exports.createOperSecurity = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createOperSecurity = async (req, res) => {
         }
 
         const newOperSecurity = new Oper_security({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getOperSecurityById = async (req, res) => {
 // Update a oper_security by ID
 exports.updateOperSecurityById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const operSecurity = await Oper_security.findById(req.params.id);
         if (!operSecurity) {
             return res.status(404).json({ message: "Oper_security not found" });

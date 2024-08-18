@@ -1,40 +1,114 @@
+/* Ensure image has margin to separate it from other elements */
+img {
+  margin-left: 50px;
+}
+
+/* Navbar styling */
 .navbar {
-    background-color: #259b81;
-    overflow: hidden;
+  background-color: #259b81;
+  padding: 0.4rem;
+}
+
+.navbar-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center; /* Ensure logo and menu items are aligned properly */
+}
+
+.navbar-brand {
+  color: #fff;
+  font-size: 1.5rem;
+}
+
+/* Navbar menu for items */
+.navbar-menu {
+  list-style: none;
+  display: flex;
+  margin-right: 70px;
+  padding: 0;
+  align-items: center; /* Ensure all items are aligned properly */
+}
+
+/* Each navbar item */
+.navbar-item {
+  position: relative;
+  margin-right: 20px; /* Add space between items */
+}
+
+/* Remove the margin for the last item to avoid extra space at the end */
+.navbar-item:last-child {
+  margin-right: 0;
+}
+
+/* Styling for navbar links */
+.navbar-link {
+  color: #fff;
+  text-decoration: none;
+  padding: 0rem 1rem;
+  cursor: pointer;
+  background-color: transparent;
+  border: none;
+  font-size: 1.2rem;
+}
+
+.navbar-link:hover {
+  background-color: #555;
+}
+
+/* Dropdown styling */
+.dropdown {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #fff;
+  padding: 0.5rem 0;
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  opacity: 0;
+  transform: translateY(-10px);
+  animation: fadeIn 0.3s forwards;
+}
+
+.dropdown-menu {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  width: max-content;
+}
+
+
+.dropdown-item {
+  padding: 0.5rem 1rem;
+}
+.dropdown-item:hover {
+  background-color: #eee;
+}
+
+.dropdown-link {
+  text-decoration: none;
+  color: #333;
+}
+
+.dropdown-link:hover {
+  background-color: #eee;
+}
+
+/* Animation for dropdown appearance */
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
-  
-  .navbar-container {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 14px 20px;
-  }
-  
-  .navbar-brand {
-    color: #fff;
-    font-size: 24px;
-    text-decoration: none;
-  }
-  
-  .navbar-menu {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-  }
-  
-  .navbar-item {
-    margin-left: 20px;
-  }
-  
-  .navbar-link {
-    color: #fff;
-    text-decoration: none;
-    padding: 14px 20px;
-  }
-  
-  .navbar-link:hover {
-    background-color: #ddd;
-    color: #000;
-  }
-  
+}
+
+/* Styling for profile buttons and icons */
+.profile-btn {
+  font-size: 1.2rem;
+  margin-right: 25px; /* Adjust the spacing between icons */
+}
+
+/* Container for icons to ensure they are on one line */
+.icones {
+  display: flex;
+  align-items: center; /* Align icons vertically */
+}

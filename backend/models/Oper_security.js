@@ -1,6 +1,12 @@
 const mongoose = require('mongoose');
 const Oper_securitySchema = new mongoose.Schema({
   
+
+
+
+    
+    idste: {type:String},
+    nomste:{type:String },
     State: { type: String,default:"blocked" },
     file: { type: String },
 // OPERATION

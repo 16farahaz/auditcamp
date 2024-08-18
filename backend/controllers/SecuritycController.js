@@ -4,7 +4,7 @@ const Securityc = require("../models/Securityc");
 // Create a new securityc
 exports.createSecurityc = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSecurityc = async (req, res) => {
         }
 
         const newSecurityc = new Securityc({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getSecuritycById = async (req, res) => {
 // Update a securityc by ID
 exports.updateSecuritycById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const securityc = await Securityc.findById(req.params.id);
         if (!securityc) {
             return res.status(404).json({ message: "Securityc not found" });
@@ -67,7 +69,11 @@ exports.updateSecuritycById = async (req, res) => {
 
         const updatedSecurityc = await Securityc.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

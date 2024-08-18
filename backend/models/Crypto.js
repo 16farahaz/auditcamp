@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const CryptoSchema = new mongoose.Schema({
   
+
+
+    
+    idste: {type:String},
+    nomste:{type:String },
     State: { type: String,default:"blocked" },
     file: { type: String },
  // CRYPTOGRAPHY

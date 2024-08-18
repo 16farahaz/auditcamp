@@ -4,7 +4,7 @@ const Security_phy_env = require("../models/Security_phy_env");
 // Create a new security_phy_env
 exports.createSecurityPhyEnv = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSecurityPhyEnv = async (req, res) => {
         }
 
         const newSecurityPhyEnv = new Security_phy_env({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -53,7 +55,7 @@ exports.getSecurityPhyEnvById = async (req, res) => {
 // Update a security_phy_env by ID
 exports.updateSecurityPhyEnvById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const securityPhyEnv = await Security_phy_env.findById(req.params.id);
         if (!securityPhyEnv) {
             return res.status(404).json({ message: "Security_phy_env not found" });
@@ -68,7 +70,11 @@ exports.updateSecurityPhyEnvById = async (req, res) => {
 
         const updatedSecurityPhyEnv = await Security_phy_env.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

@@ -4,7 +4,7 @@ const Securityi = require("../models/Securityi");
 // Create a new security incident
 exports.createSecurityi = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSecurityi = async (req, res) => {
         }
 
         const newSecurityi = new Securityi({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getSecurityiById = async (req, res) => {
 // Update a security incident by ID
 exports.updateSecurityiById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const securityi = await Securityi.findById(req.params.id);
         if (!securityi) {
             return res.status(404).json({ message: "Security incident not found" });
@@ -67,7 +69,11 @@ exports.updateSecurityiById = async (req, res) => {
 
         const updatedSecurityi = await Securityi.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest},
             { new: true }
         );
 

@@ -28,7 +28,9 @@ const SupliersRoutes=require("./routes/Suppliers");
 const SecurityiRoutes=require("./routes/Securityi");
 const Security_aspRoutes=require("./routes/Security_asp");
 const ComplianceRoutes=require("./routes/Compliance");
+const UserRoutes=require("./routes/User");
 
+const PieRoutes=require("./routes/Pie");
 
 app.use(express.json());
 app.use(cors());
@@ -49,6 +51,8 @@ app.use("/suppliers",SupliersRoutes);
 app.use("/securityi",SecurityiRoutes);
 app.use("/secasp",Security_aspRoutes);
 app.use("/compliance",ComplianceRoutes);
+app.use("/graph",PieRoutes);
+app.use("/user",UserRoutes);
 
 
 

@@ -4,7 +4,7 @@ const Securityo = require("../models/Securityo");
 // Create a new securityo
 exports.createSecurityo = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSecurityo = async (req, res) => {
         }
 
         const newSecurityo = new Securityo({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -53,7 +55,7 @@ exports.getSecurityoById = async (req, res) => {
 // Update a securityo by ID
 exports.updateSecurityoById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const securityo = await Securityo.findById(req.params.id);
         if (!securityo) {
             return res.status(404).json({ message: "Securityo not found" });
@@ -68,7 +70,11 @@ exports.updateSecurityoById = async (req, res) => {
 
         const updatedSecurityo = await Securityo.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

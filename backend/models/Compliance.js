@@ -1,6 +1,11 @@
 const mongoose = require('mongoose');
 const   ComplianceSchema = new mongoose.Schema({
   
+
+
+    
+    idste: {type:String},
+    nomste:{type:String },
     State: { type: String,default:"blocked" },
     file: { type: String },
  // COMPLIANCE

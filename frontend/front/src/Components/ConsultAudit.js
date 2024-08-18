@@ -4,6 +4,7 @@ import { useParams } from 'react-router-dom';
 import axios from 'axios';
 import '../Components/ConsultAuditStyle.css'; // Ajuster le chemin selon la structure de votre projet
 import { Alert } from '@mui/material';
+import { isDOMComponent } from 'react-dom/test-utils';
 
 function ConsultAudit() {
   const { id } = useParams(); // Extraire l'ID de l'audit à partir de l'URL
@@ -40,6 +41,8 @@ function ConsultAudit() {
     }
 
     axios.post('http://localhost:5000/securityp/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at1: audit.at1,
@@ -66,6 +69,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/securityo/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
     
@@ -102,6 +107,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/human/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at21: audit.at21,
@@ -135,6 +142,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/asset/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at33: audit.at33,
@@ -178,6 +187,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/access/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at53: audit.at53,
@@ -228,6 +239,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/crypto/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at81: audit.at81,
@@ -253,6 +266,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/spe/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at85: audit.at85,
@@ -305,6 +320,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/oper/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at115: audit.at115,
@@ -355,7 +372,9 @@ function ConsultAudit() {
       return;
     }
   
-    axios.post('http://localhost:5000/oper/add', {
+    axios.post('http://localhost:5000/securityc/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at145: audit.at145,
@@ -393,7 +412,9 @@ function ConsultAudit() {
       return;
     }
   
-    axios.post('http://localhost:5000/securityc/add', {
+    axios.post('http://localhost:5000/system/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at161: audit.at161,
@@ -425,7 +446,9 @@ function ConsultAudit() {
       return;
     }
   
-    axios.post('http://localhost:5000/system/add', {
+    axios.post('http://localhost:5000/suppliers/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at169: audit.at169,
@@ -447,7 +470,9 @@ function ConsultAudit() {
       return;
     }
   
-    axios.post('http://localhost:5000/suppliers/add', {
+    axios.post('http://localhost:5000/securityi/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at171: audit.at171,
@@ -472,6 +497,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/secasp/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at173: audit.at173,
@@ -499,6 +526,8 @@ function ConsultAudit() {
     }
   
     axios.post('http://localhost:5000/compliance/add', {
+      idste:audit._id,
+      nomste:audit.nom,
       State: '',
       file: '', 
       at177: audit.at177,

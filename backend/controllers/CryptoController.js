@@ -4,7 +4,7 @@ const Crypto = require("../models/Crypto");
 // Create a new crypto
 exports.createCrypto = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createCrypto = async (req, res) => {
         }
 
         const newCrypto = new Crypto({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -53,7 +55,7 @@ exports.getCryptoById = async (req, res) => {
 // Update a crypto by ID
 exports.updateCryptoById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const crypto = await Crypto.findById(req.params.id);
         if (!crypto) {
             return res.status(404).json({ message: "Crypto not found" });
@@ -68,7 +70,11 @@ exports.updateCryptoById = async (req, res) => {
 
         const updatedCrypto = await Crypto.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest},
             { new: true }
         );
 

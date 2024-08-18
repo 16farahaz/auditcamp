@@ -4,7 +4,7 @@ const Security_asp = require("../models/Security_asp");
 // Create a new security aspect
 exports.createSecurity_asp = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSecurity_asp = async (req, res) => {
         }
 
         const newSecurity_asp = new Security_asp({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getSecurity_aspById = async (req, res) => {
 // Update a security aspect by ID
 exports.updateSecurity_aspById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const security_asp = await Security_asp.findById(req.params.id);
         if (!security_asp) {
             return res.status(404).json({ message: "Security aspect not found" });
@@ -67,7 +69,11 @@ exports.updateSecurity_aspById = async (req, res) => {
 
         const updatedSecurity_asp = await Security_asp.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

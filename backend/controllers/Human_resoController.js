@@ -4,7 +4,7 @@ const Human_reso = require("../models/Human_reso");
 // Create a new human_reso
 exports.createHumanReso = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createHumanReso = async (req, res) => {
         }
 
         const newHumanReso = new Human_reso({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -53,7 +55,7 @@ exports.getHumanResoById = async (req, res) => {
 // Update a human_reso by ID
 exports.updateHumanResoById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const human_reso = await Human_reso.findById(req.params.id);
         if (!human_reso) {
             return res.status(404).json({ message: "Human_reso not found" });
@@ -68,7 +70,11 @@ exports.updateHumanResoById = async (req, res) => {
 
         const updatedHumanReso = await Human_reso.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

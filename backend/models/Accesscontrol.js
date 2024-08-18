@@ -1,6 +1,9 @@
 const mongoose = require('mongoose');
 const AccesscontrolSchema = new mongoose.Schema({
-  
+
+
+    idste: {type:String , required: true},
+    nomste:{type:String, required: true },
     State: { type: String,default:"blocked" },
     file: { type: String },
  // ACCESS

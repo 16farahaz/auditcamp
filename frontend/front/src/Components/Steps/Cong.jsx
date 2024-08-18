@@ -1,5 +1,5 @@
 import React from 'react'
-
+import { useNavigate } from 'react-router-dom';
 
 function Cong() {
   return (
@@ -32,12 +32,12 @@ function Cong() {
           <div className="text-lg font-semibold text-gray-500">
             Your Audit file has been created.
           </div>
-          <a className="mt-10" href="/user/dashboard">
+          <a className="mt-10" href="/dashboard">
             <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
              New Audit
             </button>
           </a>
-          <a className="mt-10" href="">    <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
+          <a className="mt-10" href="/audit">    <button className="h-10 px-5 text-green-700 transition-colors duration-150 border border-gray-300 rounded-lg focus:shadow-outline hover:bg-green-500 hover:text-green-100">
               Audit List
             </button></a>
         </div>

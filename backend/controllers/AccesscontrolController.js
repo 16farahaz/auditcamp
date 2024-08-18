@@ -4,7 +4,7 @@ const Accesscontrol = require("../models/Accesscontrol");
 // Create a new access control
 exports.createAccesscontrol = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createAccesscontrol = async (req, res) => {
         }
 
         const newAccesscontrol = new Accesscontrol({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getAccesscontrolById = async (req, res) => {
 // Update an access control by ID
 exports.updateAccesscontrolById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const accesscontrol = await Accesscontrol.findById(req.params.id);
         if (!accesscontrol) {
             return res.status(404).json({ message: "Access control not found" });
@@ -67,7 +69,7 @@ exports.updateAccesscontrolById = async (req, res) => {
 
         const updatedAccesscontrol = await Accesscontrol.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste, nomste:nomste ,State: State || "blocked", file: filePath, ...rest },
             { new: true }
         );
 

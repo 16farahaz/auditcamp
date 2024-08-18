@@ -4,7 +4,7 @@ const Asset = require("../models/Asset");
 // Create a new asset
 exports.createAsset = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createAsset = async (req, res) => {
         }
 
         const newAsset = new Asset({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -53,7 +55,7 @@ exports.getAssetById = async (req, res) => {
 // Update an asset by ID
 exports.updateAssetById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const asset = await Asset.findById(req.params.id);
         if (!asset) {
             return res.status(404).json({ message: "Asset not found" });
@@ -68,7 +70,11 @@ exports.updateAssetById = async (req, res) => {
 
         const updatedAsset = await Asset.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

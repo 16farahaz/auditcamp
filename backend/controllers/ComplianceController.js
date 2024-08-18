@@ -4,7 +4,7 @@ const Compliance = require("../models/Compliance");
 // Create a new compliance record
 exports.createCompliance = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createCompliance = async (req, res) => {
         }
 
         const newCompliance = new Compliance({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getComplianceById = async (req, res) => {
 // Update a compliance record by ID
 exports.updateComplianceById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const compliance = await Compliance.findById(req.params.id);
         if (!compliance) {
             return res.status(404).json({ message: "Compliance record not found" });
@@ -67,7 +69,11 @@ exports.updateComplianceById = async (req, res) => {
 
         const updatedCompliance = await Compliance.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

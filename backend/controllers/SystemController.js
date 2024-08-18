@@ -4,7 +4,7 @@ const System = require("../models/System");
 // Create a new system
 exports.createSystem = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSystem = async (req, res) => {
         }
 
         const newSystem = new System({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -52,7 +54,7 @@ exports.getSystemById = async (req, res) => {
 // Update a system by ID
 exports.updateSystemById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const system = await System.findById(req.params.id);
         if (!system) {
             return res.status(404).json({ message: "System not found" });
@@ -67,7 +69,11 @@ exports.updateSystemById = async (req, res) => {
 
         const updatedSystem = await System.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 

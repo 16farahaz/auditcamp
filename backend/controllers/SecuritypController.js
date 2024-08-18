@@ -4,7 +4,7 @@ const Securityp = require("../models/Securityp");
 // Create a new securityp
 exports.createSecurityp = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
 
         let filePath = "";
         if (req.files && req.files.file) {
@@ -14,6 +14,8 @@ exports.createSecurityp = async (req, res) => {
         }
 
         const newSecurityp = new Securityp({
+            idste:idste,
+            nomste:nomste,
             State: State || "blocked",
             file: filePath,
             ...rest
@@ -53,7 +55,7 @@ exports.getSecuritypById = async (req, res) => {
 // Update a securityp by ID
 exports.updateSecuritypById = async (req, res) => {
     try {
-        const { State, ...rest } = req.body;
+        const {  idste,nomste,State, ...rest } = req.body;
         const securityp = await Securityp.findById(req.params.id);
         if (!securityp) {
             return res.status(404).json({ message: "Securityp not found" });
@@ -68,7 +70,11 @@ exports.updateSecuritypById = async (req, res) => {
 
         const updatedSecurityp = await Securityp.findByIdAndUpdate(
             req.params.id,
-            { State: State || "blocked", file: filePath, ...rest },
+            { idste:idste,
+                nomste:nomste,
+                State: State || "blocked",
+                file: filePath,
+                ...rest },
             { new: true }
         );
 
