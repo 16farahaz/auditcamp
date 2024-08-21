@@ -95,7 +95,7 @@ function Dashboard() {
                   <td>{audit.emailc}</td>
                   <td>{audit.norme}</td>
                   <td>
-                    <a href={`/ConsultAudit/${audit._id}`} className="edit" data-bs-toggle="modal" data-bs-target="#consultauditModal">
+                    <a href={`/espace/${audit._id}`} className="edit" data-bs-toggle="modal" data-bs-target="#consultauditModal">
                       <button className='btncn'>Company space</button>
                     </a>
                   </td>

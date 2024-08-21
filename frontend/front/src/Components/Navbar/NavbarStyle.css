@@ -1,5 +1,5 @@
 /* Ensure image has margin to separate it from other elements */
-img {
+.imgp {
   margin-left: 50px;
 }
 

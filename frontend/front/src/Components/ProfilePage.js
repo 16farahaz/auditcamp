@@ -148,7 +148,7 @@ function ProfilePage() {
                     />
                 </div>
                 {editing ? (
-                    <form onSubmit={handleProfileUpdate}>
+                    <form onSubmit={handleProfileUpdate} className='upf'>
                         <label className='lab'> First name</label>
                         <input 
                             type="text" 
@@ -186,15 +186,31 @@ function ProfilePage() {
                             value={motpasse} 
                             onChange={(e) => setMotpasse(e.target.value)} 
                         />
-                        <button type="submit">Update Profile</button>
+                        <button type="submit" className='upff'>Update Profile</button>
                     </form>
                 ) : (
-                    <div>
-                        <h2 className="name">{user.name} {user.lastname}</h2>
-                        <p className="location">{user.email}</p>
-                        <p className="job">{user.role}</p>
-                        <button  className='btn1' onClick={() => setEditing(true)}>Edit Profile</button>
-                    </div>
+<div className='userinfo'>
+ 
+    <div>
+      <label className='lba'>Name:</label>
+      <p className="nom">{user.name}</p>
+    </div>
+    <div>
+      <label className='lba'>LastName:</label>
+      <p className='lastname'>{user.lastname}</p>
+    </div>
+    <div>
+      <label className='lba'>Email address:</label>
+      <p className="email">{user.email}</p>
+    </div>
+    <div>
+      <label className='lba'>Role:</label>
+      <p className="role">{user.role}</p>
+    </div>
+    <button className='btn1' onClick={() => setEditing(true)}>Edit Profile</button>
+  </div>
+
+
                 )}
             </div>
         </div>

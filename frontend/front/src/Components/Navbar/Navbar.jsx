@@ -20,7 +20,7 @@ const Navbar = () => {
     <nav className="navbar">
       <div className="navbar-container">
         <Link to="/dashboard">
-          <img src='/AuditCamp.png' alt='Audit Camp Logo' style={{ width: '70px', height: '60px' }} />
+          <img src='/AuditCamp.png' alt='Audit Camp Logo'  className='imgp'style={{ width: '70px', height: '60px' }} />
         </Link>
      
         <ul className="navbar-menu">

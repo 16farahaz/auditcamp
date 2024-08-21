@@ -1,0 +1,95 @@
+/* Container for both pie charts and audit information */
+.chart-containerr {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between; /* Space between items */
+    align-items: flex-start; /* Align items at the top */
+    gap: 20px; /* Optional: Space between the containers */
+    padding: 20px; /* Optional: Padding around the container */
+}
+
+/* Container for the pie chart */
+.pie-containerr {
+    width: 600px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 50px;
+}
+
+/* Container for the audit information */
+.datainfo {
+    width: 600px;
+    height: 480px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 50px;
+    margin-left: 30px;
+}
+
+/* Styling for h3 element */
+.h3 {
+    color: #259b81; /* Set the color */
+    font-weight: bold; /* Make the text bold */
+    font-size: 1.5rem; /* Set the font size */
+    margin: 0; /* Remove default margin if needed */
+    margin-bottom: 20px;
+}
+
+/* Styling for each item in the info */
+.info-item {
+    display: flex;
+    justify-content: space-between; /* Space between label and value */
+    margin-bottom: 10px; /* Space between items */
+}
+
+/* Styling for labels and values */
+.label {
+    font-weight: bold;
+    color: #259b81;
+}
+
+.value {
+    margin-left: 10px; /* Space between label and value */
+}
+
+
+@media print {
+    /* Ensure content breaks correctly */
+    .page-break {
+      page-break-before: always;
+    }
+  
+    /* Avoid breaking inside specific elements */
+    .no-break {
+      page-break-inside: avoid;
+    }
+    
+    /* Handle large tables or sections */
+    table {
+      page-break-inside: auto;
+    }
+  }
+
+
+  .printbtn{
+    background-color: #259b81; /* Green button */
+    color: #ffffff;
+    
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+    margin-left: 1150px;
+    font-size: 1rem; /* Button font size */
+  }
+  

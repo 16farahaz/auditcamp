@@ -8,6 +8,10 @@ import Cong from './Steps/Cong';
 import ConsultAudit from './ConsultAudit';
 import ProfilePage from './ProfilePage';
 import LogoutPage from './LogoutPage';
+import Comsp from './Comesp/Comsp';
+
+
+
 
 const Routesnav = ({ onLogout }) => {
 
@@ -24,6 +28,7 @@ const Routesnav = ({ onLogout }) => {
           <Route path="/Auditl" element={<Table />} />
           <Route path="/Cong" element={<Cong />} />
           <Route path="/consultaudit/:id" element={<ConsultAudit />} />
+          <Route path="/espace/:id" element={<Comsp />} />
           <Route path="/profil" element={<ProfilePage />} />
           <Route path="/logout" element={<LogoutPage onLogout={onLogout} />} />
         </Routes>

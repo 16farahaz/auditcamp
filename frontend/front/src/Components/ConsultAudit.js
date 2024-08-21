@@ -568,7 +568,10 @@ function ConsultAudit() {
 
   return (
     <>
-    
+    <div className='page-break'>
+
+
+    <button onClick={() => window.print()} className='printbtn2'>Print Page</button>
     <div className='titrerp'><h1>{audit.nom} Audit Repport</h1></div>
           <div className="container1 max-w-full shadow-xl rounded-2xl pb-2 bg-white">
         <div className="table-wrapper">
@@ -1661,9 +1664,9 @@ identifiable information? </td>
                 <th colSpan="3"><h2>Independent review of information security</h2></th>
               </tr>
               <tr key={audit._id} className="trtxt">
-                <td className='strong'>DDefined policy for compliance
-with security policies and
-standards?  </td>
+                <td className='strong'>Defined policy for compliance
+                                     with security policies and
+                                      standards?  </td>
                 <td>{audit.at187.toString()}</td>
                 <td>{audit.at188}</td>
               </tr>
@@ -1680,6 +1683,11 @@ standards?  </td>
       </div>
 
 
+
+
+
+    </div>
+    
 
 
 

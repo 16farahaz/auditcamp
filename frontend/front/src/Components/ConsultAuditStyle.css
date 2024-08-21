@@ -131,3 +131,37 @@
     transform: translateY(4px); /* Move the button down slightly */
   }
   
+
+  @media print {
+    /* Ensure content breaks correctly */
+    .page-break {
+      page-break-before: always;
+    }
+  
+    /* Avoid breaking inside specific elements */
+    .no-break {
+      page-break-inside: avoid;
+    }
+    
+    /* Handle large tables or sections */
+    table {
+      page-break-inside: auto;
+    }
+  }
+
+
+  
+
+  .printbtn2{
+    background-color: #259b81; /* Green button */
+    color: #ffffff;
+    
+    padding: 10px 15px;
+    text-decoration: none;
+    display: inline-block;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    margin-left: 1150px;
+    font-size: 1rem; /* Button font size */
+  }
+  

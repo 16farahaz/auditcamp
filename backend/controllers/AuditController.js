@@ -148,9 +148,6 @@ exports.getAuditById = async (req, res) => {
     };
 
 
-    exports.envoyertask=async(req,res)=>{
-
-    };
-
+   
 
 

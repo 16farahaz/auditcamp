@@ -31,6 +31,7 @@ const ComplianceRoutes=require("./routes/Compliance");
 const UserRoutes=require("./routes/User");
 
 const PieRoutes=require("./routes/Pie");
+const   ChartRoutes=require("./routes/Chart");
 
 app.use(express.json());
 app.use(cors());
@@ -52,6 +53,7 @@ app.use("/securityi",SecurityiRoutes);
 app.use("/secasp",Security_aspRoutes);
 app.use("/compliance",ComplianceRoutes);
 app.use("/graph",PieRoutes);
+app.use("/graph1",ChartRoutes);
 app.use("/user",UserRoutes);
 
 
