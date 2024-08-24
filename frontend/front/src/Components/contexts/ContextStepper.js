@@ -21,4 +21,4 @@ export function UseContextProvider({ children }) {
 /*creating a StepperContext using React's createContext API. This context can be used to manage 
 and share state across components within your React application, especially useful for scenarios like
  multi-step forms or wizards where multiple components need access to the current step or other shared state.   
- manhbch no93d nsta3ml fi props ou redux khatr chno93d n3aytlha mn component llekher w ta3abni  <3 */
+ manhbch no93d nsta3ml fi props ou redux khatr chno93d n3aytlha mn component llekher   <3 */

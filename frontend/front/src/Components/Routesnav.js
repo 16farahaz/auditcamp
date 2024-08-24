@@ -9,6 +9,9 @@ import ConsultAudit from './ConsultAudit';
 import ProfilePage from './ProfilePage';
 import LogoutPage from './LogoutPage';
 import Comsp from './Comesp/Comsp';
+import UserReg from './UserReg';
+import Users from './Users';
+import UserPro from './Userpro';
 
 
 
@@ -30,6 +33,12 @@ const Routesnav = ({ onLogout }) => {
           <Route path="/consultaudit/:id" element={<ConsultAudit />} />
           <Route path="/espace/:id" element={<Comsp />} />
           <Route path="/profil" element={<ProfilePage />} />
+          <Route path="/user" element={<UserReg />} />
+          <Route path="/users" element={<Users />} />
+          <Route path="/userpro/:id" element={<UserPro />} />
+
+
+
           <Route path="/logout" element={<LogoutPage onLogout={onLogout} />} />
         </Routes>
       </div>

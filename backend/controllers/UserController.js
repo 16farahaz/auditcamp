@@ -68,11 +68,6 @@ const loginUser = async (req, res) => {
         console.log("User found:", user); // Debugging log
 
         // Validate password
-        if (!user.motpasse) {
-            console.error("User has no password stored!"); // Additional debug info
-            return res.status(400).json({ message: 'Invalid user data!' });
-        }
-
         const validPass = await bcrypt.compare(motpasse, user.motpasse);
         if (!validPass) {
             return res.status(401).json({ message: 'Invalid credentials!' });
@@ -80,7 +75,8 @@ const loginUser = async (req, res) => {
 
         // Create a JWT token with role
         const token = jwt.sign({ _id: user._id, role: user.role }, '123456789', { expiresIn: '1h' });
-
+        console.log("Generated Token:", token);
+        
         // Return the user and token
         res.status(200).json({ user, token });
     } catch (error) {
@@ -136,6 +132,7 @@ const updateUser = async (req, res) => {
         res.status(500).json({ message: 'Server error' });
     }
 };
+
 // Update user profile image
 const updateImage = async (req, res) => {
     try {
@@ -222,6 +219,12 @@ const getUserById = async (req, res) => {
 // Get all users
 const getUsers = async (req, res) => {
     try {
+        // Ensure the current user has permission to fetch all users
+        const currentUser = req.user;
+        if (currentUser.role !== 'superadmin') {
+            return res.status(403).json({ message: 'You do not have permission to access this resource' });
+        }
+
         // Fetch all users from the database
         const users = await User.find();
         res.status(200).json({ users });
@@ -231,8 +234,7 @@ const getUsers = async (req, res) => {
     }
 };
 
-
-//user profil
+// Get user profile
 const getUserProfile = async (req, res) => {
     try {
         // Retrieve the user ID from the JWT payload (set by the verifyJWT middleware)
@@ -243,18 +245,17 @@ const getUserProfile = async (req, res) => {
 
         // Check if the user exists
         if (!user) {
-            return res.status(404).json({ message: 'User not found' });
+            return res.status(404).json({ message: 'User not found!' });
         }
 
-        // Return the user data
         res.status(200).json({ user });
     } catch (error) {
-        console.error('Error fetching user profile:', error);
+        console.error('Error retrieving user profile:', error);
         res.status(500).json({ message: 'Server error' });
     }
 };
 
-
+// Export the controller functions
 module.exports = {
     registerUser,
     loginUser,
